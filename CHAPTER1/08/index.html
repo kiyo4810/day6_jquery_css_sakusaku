@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>08-簡単に実装できる軽快な動作のツールチップ</title>
+    <link rel="stylesheet" href="styles/styles.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/jquery.cluetip.css" type="text/css"/>
+</head>
+<body>
+
+<header>
+    <h1>MdN - ツールボックス</h1>
+    <h2>マウスオーバー 、クリックで表示するツールチップ</h2>
+</header>
+
+<div class="container">
+    <!-- Start Content -->
+    <div>
+        <strong>その１:aタグのtitle属性に入力された値をツールチップ表示します。</strong>
+        <br>
+        <a class="title" href="#" title="title属性の値です|『｜(半角バーティルカバー)』を区切文字として題名／本文を記載します。">カーソルを合わせてください</a>
+        <br>
+        <br>
+
+        <strong>その２:ツールチップに閉じるリンクを表示します。</strong>
+        <br>
+        <a class="sticky" href="#" title="closeリンクで閉じます。|closeリンクを押すまで表示されます。">カーソルを合わせてください</a>
+        <br>
+        <br>
+
+        <strong>その３:HTMLファイルをツールチップ表示します</strong>
+        <br>
+        <a class="basic" href="http://www.ardito.jp" rel="cluetip.html">カーソルを合わせてください</a>.
+        <br>
+        <br>
+        <strong>その４:同ページ内のコンテンツをツールチップ表示します</strong>
+        <br>
+        <a class="local" href="#" rel="#loadme">カーソルを合わせてください</a>.
+        <br>
+        <br>
+
+        <div id="loadme" style="display: none">これは同ページに記述されたコンテンツです <a href="http://www.ardito.jp">local content</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- // End Content -->
+</div>
+
+<!-- Include jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+<script src="javascripts/jquery.hoverIntent.minified.js"></script>
+<script src="javascripts/jquery.cluetip.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        <!-- タイトル／本文の区切り文字を設定 -->
+        $('a.title').cluetip({
+            splitTitle:'|'
+        });
+        <!-- closeリンクをタイトルに表示 -->
+        $('a.sticky').cluetip({
+            splitTitle:'|',
+            sticky:true,
+            closePosition:'title',
+            cluetipClass:'jtip'
+        });
+        <!-- ツールチップの横幅を400ピクセルにする -->
+        $('a.basic').cluetip({
+            width:'400',
+            showTitle:false,
+            dropShadow:false,
+            cluetipClass:'test',
+            positionBy:'mouse'
+        });
+        <!-- 同ページ内のコンテンツを表示する。 -->
+        $('a.local').cluetip({
+            local:true
+        });
+    });
+</script>
+
+</body>
+</html>

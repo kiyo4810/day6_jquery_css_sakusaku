@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>40-Flickrとサイトを連携して写真を一覧表示する</title>
+<link rel="stylesheet" href="styles/styles.css" type="text/css" />
+</head>
+<body>
+
+<header>
+<h1>MdN - flickr</h1>
+<h2>flickr</h2>
+</header>
+
+<div class="container">
+<!-- Start Content -->
+    <h2>Sample1:最新画像表示</h2>
+    <p id="flickr01" class="gallery"/>
+    <h2>Sample2:IDを検索して画像を表示</h2>
+    <div>
+      <label class="ui-input-text" for="user_id">Flickr ID</label>
+      <input name="user_id" id="user_id" value="57054101@N00" type="text" data-mini="true">
+    </div>
+    <a id="load2" href="javascript:void(0);" class="wbp-small red">Load</a>
+    <p id="flickr02" class="gallery"/>
+    <h2>Sample3:表示数を指定して画像を表示</h2>
+    <div>
+      <label class="ui-input-text" for="view_num">Load num</label>
+      <input name="view_num" id="view_num" value="3" type="text" data-mini="true">
+    </div>
+    <a id="load3" href="javascript:void(0);" class="wbp-small yellow">Load</a>
+    <p id="flickr03" class="gallery"/>
+    <h2>Sample4:ソートして画像を表示</h2>
+    <div>
+      <input type="radio" name="sort" value="date-posted-desc" checked="checked" />掲載日順（降順）
+      <input type="radio" name="sort" value="date-posted-asc"/>掲載日順（昇順）
+      <input type="radio" name="sort" value="date-taken-desc"/>画像取得日順
+      <input type="radio" name="sort" value="interestingness-desc"/>人気順
+    </div>
+    <a id="load4" href="javascript:void(0);" class="wbp-small brown">Load</a>
+    <p id="flickr04" class="gallery"/>
+<!-- // End Content -->
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+<script type="text/javascript" src="javascripts/jquery.flickr-min.js"></script>
+<script type="text/javascript">
+  $(function(){   
+    $("#flickr01").flickr({
+        api_key: "fe39fb620e1b454e2bb6a18872715813",
+        per_page: 10
+    }); 
+    $('#load2').click(function(){
+      var user_id = $('#user_id').val();
+      $('#flickr02').flickr({
+        api_key: 'fe39fb620e1b454e2bb6a18872715813',
+        type: 'search',
+        user_id: user_id,
+        size: 'o',
+        per_page: 10
+      });
+    });
+    $('#load3').click(function(){
+      var view_num = $('#view_num').val();
+      $('#flickr03').flickr({
+        api_key: 'fe39fb620e1b454e2bb6a18872715813',
+        type: 'search',
+        user_id: '57054101@N00',
+        size: 'o',
+        per_page : view_num
+      });
+    });
+    $('#load4').click(function(){
+      var sort = $('input[name=sort]:checked').val();
+      $('#flickr04').flickr({
+        api_key: 'fe39fb620e1b454e2bb6a18872715813',
+        type: 'search',
+        user_id: '47734447@N03',
+        size : 'o',
+        sort : sort,
+        per_page: 10
+      });
+    });
+  });
+</script>
+</body>
+</html>

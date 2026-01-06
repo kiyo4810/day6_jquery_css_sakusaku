@@ -1,0 +1,160 @@
+/* デフォルトスタイのリセット */
+* {
+	/*font-size: 100%;*/
+	font-style: normal;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,h7,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin: 0px;padding: 0px;
+}
+
+a:link, a:visited { color: #333; }
+a:hover { color: #333; }
+
+html {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+#all:after　{ /*カラム落ち対策*/
+　　　clear:　both;
+　　　content:"";
+　　　display:　block;
+}
+
+body { background-image: url(../images/repeat-bg.jpg); margin: 0px; padding: 0px; font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; color: #c1c1a5; }
+header {
+	height: 50px;
+	margin:0;
+	padding:5px 10px;
+	background: url(../images/header-bg.png) repeat-x;
+}
+div.container {
+	clear: both;
+	width: 90%;
+	margin: 40px auto;
+	padding: 20px;
+}
+
+div.left-column {
+	width: 530px;
+	float: left;
+}
+
+div.right-column {
+	width: 588px;
+	float: right;
+}
+h2 {
+	clear: both;
+	font: bold 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: #5d5c56;
+	text-transform: uppercase;
+	margin: 20px 0px;
+	border-bottom: 1px solid #5d5c56;
+
+}
+
+a.wbp-small {
+	margin: 0px 3px 15px 3px;
+}
+
+
+/* ボタンデザイン */
+
+a.wbp-small {
+	display: block;
+	float: left;
+	width: 92px;
+	height: 35px;
+	color: #feffff;
+	text-decoration: none;
+	font: bold 13px/35px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-shadow: #919191 0 1px 0;
+	text-align: center;
+	background: url(../images/wbp-slice.png) no-repeat -495px -220px;
+}
+a.wbp-small:hover, a.wbp-small.hover {background-position: -495px -256px;}
+a.wbp-small.blue {background-position: -495px -220px;}
+a.wbp-small.blue:hover, a.wbp-small.blue.hover {background-position: -495px -256px;}
+a.wbp-small.green {background-position: -590px -220px;}
+a.wbp-small.green:hover, a.wbp-small.green.hover {background-position: -590px -256px;}
+a.wbp-small.red {background-position: -685px -220px;}
+a.wbp-small.red:hover, a.wbp-small.red.hover {background-position: -685px -256px;}
+a.wbp-small.yellow {background-position: -780px -220px;}
+a.wbp-small.yellow:hover, a.wbp-small.yellow.hover {background-position: -780px -256px;}
+a.wbp-small.grey {background-position: -875px -220px;}
+a.wbp-small.grey:hover, a.wbp-small.grey.hover {background-position: -875px -256px;}
+a.wbp-small.brown {background-position: -970px -220px;}
+a.wbp-small.brown:hover, a.wbp-small.brown.hover {background-position: -970px -256px;}
+
+/* めくる動作 */
+
+#magazine{
+	width:1152px;
+	height:752px;
+}
+.dynamicImg{
+	background-size: auto !important;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+#magazine .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
+	background-color:rgb(187, 78, 17);
+}
+
+#page-number {
+	background-color: #F8E0E6;
+}
+
+.table-contents{
+	margin-left:30px;
+	margin-top:50px;
+	width:480px;
+}
+
+.table-contentsh1{
+	font-family:"Stempel-Garamond-W01-Roman";
+	font:38px'DistrictThin',helvetica,arial;
+	font-weight:lighter;
+	margin:20px0;
+	color:#ccc;
+	-webkit-text-fill-color:#333;
+	-webkit-text-stroke-color:white;
+	-webkit-text-stroke-width:0.005em;
+}
+.table-contentsli{
+	list-style:none;
+	line-height:25px;
+}
+.table-contentsa{
+	float:left;
+	width:100%;
+	clear:both;
+	text-decoration:none;
+	color:#333;
+	margin:2px0;
+	padding:010px;
+}
+.table-contentsa:hover{
+	background:#CAD1EE;
+	float:left;
+	width:100%;
+	clear:both;
+	text-decoration:none;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-o-border-radius:10px;
+	-ms-border-radius:10px;
+	border-radius:10px;
+}
+.table-contents span{
+	float:right;
+}

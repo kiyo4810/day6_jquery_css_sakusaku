@@ -1,0 +1,100 @@
+/* デフォルトスタイのリセット */
+* {
+    /*font-size: 100%;*/
+    font-style: normal;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,h7,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin: 0px;padding: 0px;
+}
+
+a:link, a:visited { color: #333; }
+a:hover { color: #333; }
+
+html {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#all:after　{ /*カラム落ち対策*/
+    　　　clear:　both;
+    　　　content:"";
+    　　　display:　block;
+}
+
+body { background-image: url(../images/repeat-bg.jpg); margin: 0px; padding: 0px; font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; color: #c1c1a5; }
+header {
+    height: 50px;
+    margin:0;
+    padding:5px 10px;
+    background: url(../images/header-bg.png) repeat-x;
+}
+
+section { margin:20px; }
+section p { color: #333333; font-size: medium; }
+.imgLeft { float: left; margin-top: 0px; margin-right: 20px; margin-bottom: 20px; margin-left: 0px; }
+.imgRight { float: right; margin-top: 0px; margin-right: 0px; margin-bottom: 20px; margin-left: 20px; }
+
+div.container {
+    clear: both;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+div.left-column {
+    width: 530px;
+    float: left;
+}
+
+div.right-column {
+    width: 588px;
+    float: right;
+}
+h2 {
+    clear: both;
+    font: bold 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    color: #5d5c56;
+    text-transform: uppercase;
+    margin: 20px 0px;
+    border-bottom: 1px solid #5d5c56;
+
+}
+
+a.wbp-small {
+    margin: 0px 3px 15px 3px;
+}
+
+#left {
+  margin-right: 15px;
+  margin-top:10px;
+  width: 700px;
+  height: 2800px;
+  float: left;
+  }
+#right {
+  width: 200px;
+  height: 2800px;
+  float: left
+  }
+#menu {
+  position: absolute;
+  margin-top:10px;
+  padding: 10px;
+  width: 180px;
+  border: solid 1px #669999;
+  background-color: #ffffff;
+  }
+#menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  }
+#menu p a {
+  color:#0033FF;
+  text-decoration: underline;
+  }

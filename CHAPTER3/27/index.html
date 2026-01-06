@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>27-サムネイル画像で切り替える画像ギャラリー</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.9.2.custom.min.css"/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="javascripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#tabs').tabs({
+                fx:{
+                    opacity:'toggle',
+                    duration:'slow'
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>MdN - ツールボックス</h1>
+
+    <h2>左に拡大、右にサムネイル</h2>
+</header>
+
+<div class="container">
+    <!-- Start Content -->
+    <div id="tabs">
+        <ul class="ui-tabs-nav">
+            <li class="ui-tabs-nav-item"><a href="#tabs-1"><img src="images/img/s01.png"/>Title1</a></li>
+            <li class="ui-tabs-nav-item"><a href="#tabs-2"><img src="images/img/s02.png"/>Title2</a></li>
+            <li class="ui-tabs-nav-item"><a href="#tabs-3"><img src="images/img/s03.png"/>Title3</a></li>
+            <li class="ui-tabs-nav-item"><a href="#tabs-4"><img src="images/img/s04.png"/>Title4</a></li>
+        </ul>
+        <div id="tabs-1" class="ui-tabs-panel">
+            <img src="images/img/01.jpeg"/>
+        </div>
+        <div id="tabs-2" class="ui-tabs-panel">
+            <img src="images/img/02.jpeg"/>
+        </div>
+        <div id="tabs-3" class="ui-tabs-panel">
+            <img src="images/img/03.jpeg"/>
+        </div>
+        <div id="tabs-4" class="ui-tabs-panel">
+            <img src="images/img/04.jpeg"/>
+        </div>
+    </div>
+    <!-- // End Content -->
+</div>
+</body>
+</html>

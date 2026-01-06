@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <title>MdN - ツールボックス</title>
+</head>
+<body>
+    <header>
+        <h1>MdN - ツールボックス</h1>
+        <h2>画像読み込み、レスポンシブ</h2>
+    </header>
+    <div id="container" class="container">
+        <div id="itemContainer">
+            <div class="item col1">
+                <ul id="menu">
+                    <li class="menu menuCol1">メニュー1-1</li>
+                    <li class="menu menuCol2">メニュー1-2</li>
+                    <li class="menu menuCol3">メニュー1-3</li>
+                    <li class="menu menuCol4">メニュー1-4</li>
+                    <li class="menu menuCol5">メニュー1-5</li>
+                    <li class="menu menuCol6">メニュー1-6</li>
+                </ul>
+            </div>
+            <div class="item col2">画像は読み込み完了後に増えます。</div>
+            <div class="item col1" id="firstItem">サンプル</div>
+            <div class="item col3">ほげほげ</div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>-->
+    <script src="javascripts/jquery.masonry.min.js" ></script>
+    <script src="javascripts/jquery.infinitescroll.js" ></script>
+    <script>
+        $(function () {
+            var $container = $('#itemContainer');
+
+            // mansonryの設定
+            $container.masonry({
+                itemSelector : '.item', // 対象要素
+                columnWidth : 10, // 各要素間の横幅
+                isAnimated: true, // アニメーションの有無
+                isFitWidth: false, // センタリングの有無
+                isResizable: true // レスポンシブの有無
+            });
+
+            // 画像は読み込み後に表示する。
+            var images = [];
+            for ( var i=0; i < 3; i++ ) {
+                var item = '<div class="item">'
+                        + '<img class="img1" src="images/00' + (i+1) + '.jpg" />'
+                        + '</div>';
+                images.push( item );
+            }
+            var $images = $(images.join(''));
+
+            $images.imagesLoaded(function(){
+                $container.append( $images ).masonry( 'appended', $images, true );
+            });
+        });
+    </script>
+</body>
+</html>

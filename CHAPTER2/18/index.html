@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>18-オーバーレイや吹き出しでページ・ガイダンスを表示</title>
+    <link rel="stylesheet" href="styles/guiders-1.3.0.css"/>
+    <link rel="stylesheet" href="styles/styles.css"/>
+</head>
+<body>
+
+<header>
+    <h1>MdN - ツールボックス</h1>
+
+    <h2>オーバーレイで使い方説明</h2>
+</header>
+
+<div class="container">
+    <!-- Start Content -->
+
+    <div id="guide-start">
+        <p>ボタンを押すとガイドがはじまります。</p>
+        <a href="javascript:void(0);"></a>
+    </div>
+    <!-- guide-start -->
+
+    <!-- // End Content -->
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+<script src="javascripts/guiders-1.3.0.js"></script>
+<script>
+    $(function () {
+        guiders.createGuider({
+            id:"guide-welcome",
+            title:"サンプルページへようこそ!",
+            description:"<p>JavascriptライブラリのGuiders-JSをつかい、Webサイトにガイドを表示します。</p><p>次へボタンをクリックするとガイドが始まります。</p>",
+            width:450,
+            overlay:true,
+            buttons:[
+                {name:"次へ", onclick:guiders.next}
+            ],
+            next:"guide-attached"
+        }).show();
+
+        guiders.createGuider({
+            id:"guide-attached",
+            title:"ガイドのふきだし表示",
+            description:"<p>特定のHTML要素からのふきだしとしてガイドを表示することができます。</p>",
+            width:250,
+            buttons:[
+                {name:"次へ", onclick:guiders.next}
+            ],
+            next:"guide-end",
+            attachTo:"#guide-start a",
+            position:"right",
+            autoFocus:true
+        });
+
+        guiders.createGuider({
+            id:"guide-end",
+            title:"ガイドの終了",
+            description:"<p>ほかにもガイドをカスタマイズするためのさまざまなパラメータが用意されていますので試してみてください。</p>",
+            width:300,
+            buttons:[
+                {name:"完了", onclick:guiders.hideAll}
+            ],
+            overlay:true
+        });
+
+        $('#guide-start a').click(function () {
+            guiders.show('guide-welcome');
+        });
+
+    });
+</script>
+
+</body>
+</html>

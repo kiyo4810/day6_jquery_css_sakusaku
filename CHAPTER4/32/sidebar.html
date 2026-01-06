@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+  <meta charset="utf-8">
+  <title>Bootstrap, from Twitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <!-- Le styles -->
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/bootstrap-responsive.min.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .sidebar-nav {
+      padding: 9px 0;
+    }
+    
+    @media (max-width: 980px) {
+      /* Enable use of floated navbar text */
+      body {
+        padding-top: 0;
+      } 
+      .navbar-text.pull-right {
+        float: none;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  </style>
+  </head>
+  
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">Bootstrap</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+          ログイン中 <a href="#" class="navbar-link">BootUser</a>
+          </p>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Sidebar</li>
+            <li><a href="./index.html">Index</a></li>
+            <li><a href="./navi.html">Navi</a></li>
+            <li class="active"><a href="./sidebar.html">Sidebar</a></li>
+            <li><a href="./grid.html">Grid</a></li>
+            <li><a href="./table.html">Table</a></li>
+            <li><a href="./code_pre.html">Code_Pre</a></li>
+            <li><a href="./button.html">Button</a></li>
+            <li><a href="./icon.html">Icon</a></li>
+            <li><a href="./responsive.html">Responsive</a></li>
+            <li><a href="./breadcrumbs.html">Breadcrumbs</a></li>
+            <li><a href="./pagination.html">Pagination</a></li>
+            <li><a href="./labels_and_badges.html">Lables and Badges</a></li>
+            <li><a href="./alerts.html">Alerts</a></li>
+          </ul>
+        </div><!--/.sidebar-nav -->
+      </div><!--/.span3-->
+    
+      <div class="span9">
+          
+        <legend>
+          <h3>サイドバーサンプル</h3>
+        </legend>
+
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">NAVI-HEADER</li>
+            <li class="active"><a href="./index.html">Index</a></li>
+            <li><a href="./navi.html">Navi</a></li>
+            <li><a href="./sidebar.html">Sidebar</a></li>
+            <li><a href="./grid.html">Grid</a></li>
+            <li><a href="./table.html">Table</a></li>
+            <li class="nav-header">NAVI-HEADER2</li>
+            <li><a href="./code_pre.html">Code_Pre</a></li>
+            <li><a href="./button.html">Button</a></li>
+            <li><a href="./icon.html">Icon</a></li>
+            <li><a href="./responsive.html">Responsive</a></li>
+          </ul>
+        </div><!--/.sidebar-nav -->
+
+        <ul>
+          <li>&lt;ul&gt;タグに<code>.nav .nav-list</code>クラスを設定して作ります。</li>
+          <li>&lt;li&gt;タグに<code>.nav-header</code>クラスをつけるとリストの中にヘッダーを作成できます。</li>
+          <li>&lt;li&gt;タグに<code>.active</code>クラスをつけると、リンクがアクティブになります。</li>
+        </ul>
+
+        <legend>
+          <h3>アイコンを使ったサイドバーサンプル</h3>
+        </legend>
+
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">NAVI-HEADER</li>
+            <li class="active"><a href="./index.html"><i class="icon-home"></i>Index</a></li>
+            <li ><a href="./navi.html"><i class="icon-th-list"></i>Navi</a></li>
+            <li><a href="./sidebar.html"><i class="icon-list-alt"></i>Sidebar</a></li>
+          </ul>
+        </div><!--/.sidebar-nav -->
+
+        <ul>
+          <li>&lt;i&gt;タグを使いアイコンを表示させることも出来ます。&lt;i&gt;タグに<code>.iconクラス名"</code>を設定して作ります。</li>
+        </ul>
+
+
+      </div> <!--/.span9-->
+    </div><!--/.fluid-row-->
+  </div><!--/.fluid-container-->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

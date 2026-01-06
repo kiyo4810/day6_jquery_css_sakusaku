@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <link rel="stylesheet" href="styles/styles.css" type="text/css" />
+    <title>23-Media QueriesとjQueryを利用したRetina対応</title>
+
+</head>
+
+<body>
+<header>
+    <h1>MdN - ツールボックス</h1>
+
+    <h2>Retina対応</h2>
+</header>
+
+<div class="container" id="container">
+    <h1>下記はmedia queries(css)を利用して画像を切り替えています。</h1>
+    <h2>通常画像</h2>
+    <div id="retinacss"></div>
+    <h2>@2xの画像（Retinaディスプレイでない場合は、通常画像と同じものが表示されます）</h2>
+    <div id="retinacss2"></div>
+    <br/><br/><br/>
+    <h1>window.devicePixelRatio(jquery)を利用して画像を切り替えています。</h1>
+    <h2>通常画像</h2>
+    <img id="retinajs" src="./images/logo.png" alt="low"/>
+    <h2>下記は@2xの画像（Retinaディスプレイでない場合は、通常画像と同じものが表示されます）</h2>
+    <img id="retinajs2" src="./images/logo.png" alt="high"/>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+
+<script>
+    $(function () {
+        var ratio = window.devicePixelRatio;
+        if (ratio >1) {
+            alert("window.devicePixelRatio=" + ratio + " ->retinaディスプレイです。");
+            $('#retinajs2').attr({src:'./images/logo@2x.png', alt:'high', width:'248', height:'100'});
+        } else if (ratio <= 1) {
+            alert("window.devicePixelRatio=" + ratio + " ->retinaディスプレイではありません。");
+        }
+    });
+</script>
+
+</body>
+</html>

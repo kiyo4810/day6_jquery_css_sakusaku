@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>42-データに送信状況に応じてフォームに通知パネルを表示</title>
+    <link rel="stylesheet" href="styles/styles.css" type="text/css"/>
+</head>
+<body>
+
+<header>
+    <h1>MdN - ツールボックス</h1>
+
+    <h2>通知パネル</h2>
+</header>
+
+
+<div class="container">
+    <!-- Start Content -->
+
+
+    <pre>こ質問やご意見ご感想などがありましたら、こちらからメッセージを送ってください。</pre>
+    <br>
+
+    <form name="user-form">
+        名前<br>
+        <input type="text" name="user-name"><br>
+        メールアドレス<br>
+        <input type="text" name="user-mail-address"><br>
+        メッセージ<br>
+        <textarea name="user-message" rows="5"></textarea><br>
+        <br>
+        <a class="wbp-small red action">送信</a>
+    </form>
+
+
+    <!-- // End Content -->
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+<!-- noty -->
+<script type="text/javascript" src="javascripts/noty/jquery.noty.js"></script>
+<script type="text/javascript" src="javascripts/noty/layouts/top.js"></script>
+<script type="text/javascript" src="javascripts/noty/themes/default.js"></script>
+<!-- // noty -->
+
+<script>
+    $(function () {
+        $(".action").on("click", function () {
+            var name = $("input[name=user-name]").val();
+            noty({
+                text:name + "様、ご意見ありがとうございます。<br>",
+                type:"success",
+                layout:"top",
+                timeout:5000
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>01-上下スクロールに対応したパララックス効果</title>
+    <link rel="stylesheet" href="styles/styles.css" type="text/css" />
+    <link href="styles/fixed-positioning.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<header>
+    <h1>MdN - ツールボックス</h1>
+    <h2>上下スクロールに対応したパララックス効果</h2>
+</header>
+    <div id="bg1" data-0="background-position:0px 0px;" data-end="background-position:-500px -10000px;"></div>
+    <div id="bg2" data-0="background-position:0px 0px;" data-end="background-position:-500px -8000px;"></div>
+    <div id="progress" data-0="width:0%;background:hsl(200, 100%, 50%);" data-end="width:100%;background:hsl(920, 100%, 50%);"></div>
+
+    <div id="turnboard" data-0="opacity:1;top:30%;transform:rotate(0deg);transform-origin:0 0;" data-500="opacity:0;top:-10%;transform:rotate(-90deg);">
+        <a href="https://github.com/Prinzhorn/skrollr">パララクス　サンプル(skrollr)</a><br />
+        <h3>スクロールで平面回転</h3>
+    </div>
+    <div id="revarsal" data-0="opacity:0;display:none" data-500="transform:skewX(0deg);opacity:1;display:block;" data-1000="transform:skewX(90deg);" data-1500="transform:skewX(180deg);opacity:0;display:none">
+        <img src="images/topslide01.png" />
+        <h3>スクロールで反転</h3>
+    </div>
+
+    <div id="expander" data-1700="top:100%;left:50%;width:10%;display:block;" data-2200="top:0%;left:25%;width:50%;" data-3000="top:0%;width:100%;left:0%;" data-3700="top:-100%;width:100%;display:none;">
+        <h3>スクロールで下から上へ移動</h3>
+        <h3>（同時に横方向への展開）</h3>
+    </div>
+    <div id="slidetoleft" data-3500="top:10%;left:100%;display:block;" data-4000="left:0%;" data-4500="left:0%;" data-5000="left:-100%;display:none;">
+        <h2>スクロールで右から左へ移動</h2>
+    </div>
+    <div id="slidetoright" data-3500="top:40%;left:-100%;display:block;" data-4000="left:0%;" data-4500="left:0%;" data-5000="left:100%;display:none;">
+        <h2>スクロールで左から右へ移動</h2>
+    </div>
+    <div id="turncanvas" data-0="display:none;" data-6100="display:block;" data-7100="background:rgba(0, 0, 0, 0);" data-8100="background:rgba(0,0,0,1);" data-12100="top:0%;" data-14100="top:-100%;">
+        <div id="turncolorsize" data-6100="opacity:0;" data-6700="opacity:1;">
+            <h2>スクロールで背景が徐々に暗くなる</h2>
+            <p>
+            <span data-6100="" data-6700="color[swing]:rgb(0,0,0);" data-11000="color:rgb(255,255,0);">スクロールで文字の色が変わる</span><br />
+            <br />
+            <span data-6100="" data-6700="font-size:30%;" data-11000="font-size:200%">スクロールで文字のサイズが変わる</span>
+            </p>
+        </div>
+    </div>
+    <div id="finish" data-0="display:none;" data-13200="top:10%;opacity:0;display:block;" data-14000="opacity:1;">
+        <h1>FIN.</h1>
+    </div>
+    <script type="text/javascript" src="javascripts/skrollr.min.js"></script>
+    <script type="text/javascript">
+        skrollr.init();
+    </script>
+</body>
+</html>

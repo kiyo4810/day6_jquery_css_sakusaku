@@ -1,0 +1,41 @@
+body
+{
+	background:#3e83c8
+}
+.bg
+{
+	width:100%;
+	height:100%;
+}
+.bg1
+{
+	background: url(../images/bg2.png) repeat 0 0;
+}
+.bg2
+{
+	background: url(../images/bg1.png) repeat 0 0;
+}
+.bg3
+{
+	background: url(../images/topslide01.png) no-repeat;
+	background-position: center center;
+}
+.bg4
+{
+	background: url(../images/star_bg.jpg) repeat 0 0;
+}
+.bg5
+{
+	background: url(../images/topslide01.png) no-repeat;
+	background-position: center 0;
+}
+.move_el
+{
+	position: absolute;
+}
+.indicator {
+	margin: 0;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+}

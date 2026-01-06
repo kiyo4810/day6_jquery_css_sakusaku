@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>07-コンテンツの全体像を一望できる折りたたみ可能なタイムライン</title>
+	<link rel="stylesheet" href="../../common/template/styles/styles.css" type="text/css" />
+	<link rel="stylesheet" href="styles/screen.css" type="text/css" />
+</head>
+<body>
+<header>
+	<h1>MdN - ツールボックス</h1>
+	<h2>折りたたみ可能なタイムライン</h2>
+</header>
+<div class="container">
+	<!-- Start Content -->
+	<div id="timelineContainer">
+		<!-- 全展開＆全収束機能の追加（オプションのstartState及びexpandAllText、collapseAllTextに合わせておくのがいい） -->
+		<div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
+		<br class="clear" />
+		<div class="timelineMajor">
+        	<h2 class="timelineMajorMarker">2012年</h2>
+        	<dl class="timelineMinor">
+            	<dt id="201201"><a>1月</a></dt>
+            	<dd class="timelineEvent" id="201201EX">
+            		<p>2012年1月の出来事</p>
+            		<br class="clear" />
+				</dd>
+			</dl>
+			<dl class="timelineMinor">
+				<dt id="201206"><a>6月</a></dt>
+            	<dd class="timelineEvent" id="201206EX">
+					<p>2012年6月の出来事</p>
+					<br class="clear" />
+            	</dd>
+			</dl>
+        	<dl class="timelineMinor">
+            	<dt id="201212"><a>12月</a></dt>
+            	<dd class="timelineEvent" id="201212EX">
+            		<p>2012年12月の出来事</p>
+            		<br class="clear" />
+            	</dd>
+        	</dl>
+        	<br class="clear" />
+    	</div>
+    	<br class="clear" />
+    	<div class="timelineMajor">
+        	<h2 class="timelineMajorMarker">2013年</h2>
+        	<dl class="timelineMinor">
+            	<dt id="201301"><a>1月</a></dt>
+            	<dd class="timelineEvent" id="201301EX" style="display: none; ">
+                	<p>2013年1月の出来事</p>
+                	<br class="clear" />
+            	</dd>
+        	</dl>
+        	<br class="clear" />
+    	</div>
+    	<br class="clear" />
+	</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+<script type="text/javascript" src="javascripts/timeliner.js"></script>
+<script type="text/javascript">
+		$.timeliner({
+			timelineContainer: '#timelineContainer', // Timelinerで取り扱う範囲を示すエレメントを指定する。 デフォルトは「#timelineContainer」
+			startState: 'closed', // closed or openを指定してTimelinerが初期表示で展開されているか収束されているかを指定する。デフォルトは「closed」
+			baseSpeed: 200, // 色々なアニメーションの基本速度を指定する。デフォルトは「200」
+			speed: 4, // 展開＆収束の速度を指定する。デフォルトは「4」 ※展開＆収束の速度は「speed」「baseSpeed」の設定で決まるらしい・・・どっちがどう影響するのかはいまいちよくわからず・・・
+			fontOpen: '1em', // 展開されているイベントのフォントサイズを指定する。デフォルトは「1em」
+			fontClosed: '1em', // 収束されているイベントのフォントサイズを指定する。デフォルトは「1em」
+			expandAllText: '+ expand all', // 全展開ボタンに表示される文字を指定する。デフォルトは「+ expand all」
+			collapseAllText: '- collapse all' // 全収束ボタンに表示される文字を指定する。デフォルトは「- collapse all」
+		});
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8">
+    <title>36-Twitter Bootstrapによるステップ表示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">    
+    <link href="styles/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="styles/bootstro.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+          padding-top: 20px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/assets/bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="hero-unit">
+      <h1>Bootstro.jsのサンプル</h1>
+        <br />
+        <p>bootstroクラスを設定した要素を1つずつハイライトしていきます。<br />
+           サンプル1ボタンをクリックするとチュートリアルが起動します。<br />
+          <a class="btn btn btn-success" href="#" id='sample1'>サンプル1</a>
+        </p>
+        <br />
+        <p>ハイライトする要素の順番は自分で決められます。<br />
+           サンプル2ボタンをクリックするとチュートリアルが起動します。<br />
+          <a class="btn btn btn-info" href="#" id='sample2'>サンプル2</a>
+        </p>
+      </div>
+
+      <div class="row-fluid">
+        <div class="bootstro span4" 
+             data-bootstro-title='step1'
+             data-bootstro-content="最初に表示されるチュートリアルです。カーソルキーでも次のstepへ移動をすることができます。"
+             data-bootstro-width="300px" 
+             data-bootstro-placement='bottom'
+             data-bootstro-step='0'>
+          <h2>step1</h2>
+          <li>最初のステップを設定したコンテンツです</li>
+        </div>
+
+        <div class="bootstro span4"
+             data-bootstro-title=' step2'
+             data-bootstro-content="2番目に表示されるチュートリアルです。Escキーでチュートリアルを終了することができます。"
+             data-bootstro-width="300px" 
+             data-bootstro-placement='left'
+             data-bootstro-step='1'>
+          <h2>step2</h2>
+          <li>2番目のステップを設定したコンテンツです</li>
+        </div>
+
+        <div class="bootstro span4" 
+             data-bootstro-title='step3'
+             data-bootstro-content="背景をクリックしてもチュートリアルを終了するとができます。"
+             data-bootstro-width="300px" 
+             data-bootstro-placement='right'
+             data-bootstro-step='2'>
+          <h2>step3</h2>
+          <li>3番目のステップを設定したコンテンツです</li>
+        </div>
+      </div>
+
+      <hr>
+        
+      <div class="row-fluid">
+        <div class="span4 sample2_bootstro" 
+             data-bootstro-title='ここにタイトルを入れる。' 
+             data-bootstro-content="ここに内容を入れる。"
+             data-bootstro-width="300px" 
+             data-bootstro-placement='right'
+             data-bootstro-step='2'>
+          <h2>step3</h2>
+          <li>ステップ表示したい要素にbootstroクラスを設定</li>
+        </div>
+
+        <div class="span4 sample2_bootstro" 
+             data-bootstro-title='ここにタイトルを入れる' 
+             data-bootstro-content="ここに内容を入れる。bootstroで囲われた箇所がハイライトされる。"
+             data-bootstro-width="300px" 
+             data-bootstro-placement='top'
+             data-bootstro-step='0'>
+          <h2>step1</h2>
+          <li>ステップ表示中に、カーソルキーでも動かせる。</li>
+          <li>escキーで終了出来る。</li>
+        </div>
+
+        <div class="span4 sample2_bootstro" 
+             data-bootstro-title='ここにタイトルを入れる' 
+             data-bootstro-content="ここに内容を入れる。"
+             data-bootstro-width="300px" 
+             data-bootstro-placement='bottom'
+             data-bootstro-step='1'>
+          <h2>step2</h2>
+          <li>オーバーレイの表示位置を変えられる</li>
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="sample">
+        <li>bootstro.start();を使うことでチュートリアルが起動します。クリックイベントと合わせて使います。</li>
+        <li>escキー、背景クリックの無効も出来る。bootstro.start('.bootstro', {stopOnBackdropClick : false, stopOnEsc:false});</li>
+        <li><a class="btn btn-small btn-primary stopOn" href="#">サンプル3</a> escキー、背景クリックで終了を無効にするサンプル。「Ok I got it,get back to the site」を押すまで終わらない。</li>
+        <li><a class="btn btn-small btn-warning noNavi" href="#">サンプル4</a>「Next」ボタン、「Prev」ボタンを消すサンプル。カーソルキーで移動</li>
+      </div>
+
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/bootstro.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          // ページ読み込み完了後にチュートリアルを実行。
+          bootstro.start(); 
+          $("#sample1").click(function(){
+              bootstro.start();    
+          });
+          // #sample2がクリックされたとき、.sample2_bootstroクラスのチュートリアルを実行。
+          $("#sample2").click(function(){
+              bootstro.start('.sample2_bootstro');    
+          });
+          // escキー、背景クリックを無効にするオプション。
+          $(".stopOn").click(function(){
+              bootstro.start('.bootstro', {stopOnBackdropClick : false, stopOnEsc:false});
+          });
+          //「Next」ボタン、「Prev」ボタン、「Ok I got it,get back to the site」ボタン無効
+          $(".noNavi").click(function(){ 
+              bootstro.start('.bootstro', {
+                  nextButton : '',
+                  prevButton : '',
+                  finishButton : ''
+              });    
+          });
+          
+      });
+    </script>
+  </body>
+</html>

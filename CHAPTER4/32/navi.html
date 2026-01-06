@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+  <meta charset="utf-8">
+  <title>Bootstrap, from Twitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <!-- Le styles -->
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="styles/prettify.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .sidebar-nav {
+      padding: 9px 0;
+    }
+    
+    @media (max-width: 980px) {
+      /* Enable use of floated navbar text */
+      body {
+        padding-top: 0;
+      } 
+      .navbar-text.pull-right {
+        float: none;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  </style>
+  </head>
+  
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">Bootstrap</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+          ログイン中 <a href="#" class="navbar-link">BootUser</a>
+          </p>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Sidebar</li>
+            <li><a href="./index.html">Index</a></li>
+            <li class="active"><a href="./navi.html">Navi</a></li>
+            <li><a href="./sidebar.html">Sidebar</a></li>
+            <li><a href="./grid.html">Grid</a></li>
+            <li><a href="./table.html">Table</a></li>
+            <li><a href="./code_pre.html">Code_Pre</a></li>
+            <li><a href="./button.html">Button</a></li>
+            <li><a href="./icon.html">Icon</a></li>
+            <li><a href="./responsive.html">Responsive</a></li>
+            <li><a href="./breadcrumbs.html">Breadcrumbs</a></li>
+            <li><a href="./pagination.html">Pagination</a></li>
+            <li><a href="./labels_and_badges.html">Lables and Badges</a></li>
+            <li><a href="./alerts.html">Alerts</a></li>
+          </ul>
+        </div><!--/.sidebar-nav -->
+      </div><!--/.span3-->
+    
+      <div class="span9">
+          
+        <div class="row-fluid">
+          <!-- ナビゲーションバーサンプル1 -->
+          <legend><h3>ナビゲーションバーの作り方</h3></legend>
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container-fluid">
+                  <ul class="nav">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+            <p>こんな感じで作ります。</p>
+<pre class="prettyprint linenums">
+&lt;div class=&quot;navbar&quot;&gt;
+  &lt;div class=&quot;navbar-inner&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;ul class=&quot;nav&quot;&gt;
+          &lt;li&gt;&lt;a href=&quot;#Home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#About&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#Contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+          <!-- ナビゲーションバーサンプル2 -->
+          <legend><h3>区切り線、背景色、サイトID</h3></legend>
+          <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+              <div class="container-fluid">
+                <a class="brand" href="#Bootstrap">Bootstrap</a>
+                  <ul class="nav">
+                    <li class="active"><a href="#Home">Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#About">About</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#Contact">Contact</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <ul>
+            <li><code>.navbar-inverse</code>を設定することでナビゲーションバーの背景色の設定ができます。(bootstrap.css)<br />デフォルトはこの色です。</li>
+            <li>ナビゲーションの中に区切り線を入れる。<code>&lt;li class=&quot;divider-vertical&quot;&gt;&lt;/li&gt;</code></li>
+            <li>サイトIDを設定する。<code>&lt;a class="brand"&gt;Booststap&lt;/a&gt;</code><br />サイトIDはブラウザの幅を狭くしても表示される。</li>
+           </ul>
+
+          <!-- ナビゲーションバーサンプル3 -->
+          <legend><h3>ナビゲーションをたたみ込む(レスポンシブ)</h3></legend>
+          <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+              <div class="container-fluid">
+                <!--ナビゲーションのたたみ込みの設定-->
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Bootstrap</a>                
+                <div class="nav-collapse collapse">
+                  <p class="navbar-text pull-right">
+                    ログイン中 <a href="#" class="navbar-link">BootUser</a>
+                  </p>
+                  <ul class="nav">
+                    <li class="active"><a href="#Home">Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#About">About</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#Contact">Contact</a></li>
+                  </ul>
+                </div><!--/.nav-collapse -->
+              </div>
+            </div>
+          </div>
+
+          <ul>
+            <li><code>.nav-collapse</code>クラスの付いたdivの中にある項目はブラウザの幅が狭いときは表示されません。<br />
+            幅が狭いときナビゲーションには表示されなくなりますがドロップダウンで表示することができます。</li>
+            <li><code>.navbar-fixed-top</code>でナビゲーションを固定できます。</li>
+          </ul>
+
+        </div>
+      </div> <!--/.span9-->
+    </div><!--/.fluid-row-->
+  </div><!--/.fluid-container-->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/prettify.js"></script>
+    <script>prettyPrint();</script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>31-画像編集機能をWebサイトに埋め込む</title>
+<link rel="stylesheet" href="styles/styles.css" type="text/css" />
+</head>
+<body>
+<header>
+<h1>MdN - ツールボックス</h1>
+<h2>Aviaryのサンプル</h2>
+</header>
+<div class="container">
+<!-- 以下Aviaryで生成したCode -->
+<!-- Load Feather code -->
+<script type="text/javascript" src="http://feather.aviary.com/js/feather.js"></script>
+
+<!-- Instantiate Feather -->
+<script type='text/javascript'>
+    var featherEditor = new Aviary.Feather({
+        apiKey: 'qo_2mW7JRU-PyET1o75Jqw', // アプリのkey
+        apiVersion: 2,
+        tools: 'all', // 選択した編集機能のオプションです。
+        language: 'ja', // 言語
+        appendTo: '', // 編集画面の入る要素のID
+        // Aviaryで編集ボタンを押した後の処理
+        onSave: function(imageID, newURL) {
+            var img = document.getElementById(imageID);
+            img.src = newURL; // 作成された画像になんかする場合このURLに作成されているからそれを利用すればいい。
+        },
+        // error時の処理
+        onError: function(errorObj) {
+            alert(errorObj.message);
+        }
+    });
+    // aviary呼び出しjavascript
+    function launchEditor(id, src) {
+        featherEditor.launch({
+            image: id, // 対象画像ID
+            url: src // 対象画像URL
+        });
+        return false;
+    }
+</script>
+
+<div id='injection_site'></div>
+
+<img src='http://farm9.staticflickr.com/8266/8865641485_183d994c43_b.jpg' width="906" height="600" id='image1'/>
+
+<!-- Add an edit button, passing the HTML id of the image and the public URL of the image -->
+<p><input type='image' src='http://images.aviary.com/images/edit-photo.png' value='Edit photo' onclick="return launchEditor('image1', 'http://farm9.staticflickr.com/8266/8865641485_183d994c43_b.jpg');" /></p>
+</div>
+</body>
+</html>

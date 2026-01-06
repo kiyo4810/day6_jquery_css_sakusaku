@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>MdN - ツールボックス</title>
+    <link rel="stylesheet" href="styles/styles.css" type="text/css"/>
+</head>
+<body>
+
+<header>
+    <h1>MdN - ツールボックス</h1>
+    <h2>オートページャー or 新着情報などの読み込み</h2>
+</header>
+<div class="container">
+    <!-- Start Content -->
+
+    <div id="content">
+
+        <p class="item">下までスクロールしてください。自動的に次のページを画面下部に追加して表示します。</p>
+
+<div class="container">
+    <section>
+    	<h3>最新のWeb技術を最適の戦略で</h3>
+        <p><img src="images/img.png" alt="" width="300" height="177" class="imgLeft" />2010年〜2011年、Web戦略分野では、これまでにない大きな変革を迎えました。この変革は、これからの少なくとも5〜10年間の基軸ともなり得る重要な変革であり、それはそのまま顧客マインドの変化とも密にシンクロして起こった事象と言えます。<br />
+その中でも、クラウド・コンピューティング、ソーシャル・ネットワーク、電子書籍、スマートフォン・デジタルデバイスの4つについては、既に一般に広く流布し、今後さらに浸透していく分野と考えられます。<br />
+これから新しいWeb戦略を考えるみなさまにとっては、これらの分野をいち早く、そしていかにうまく取り入れるかが成功の鍵となると考えております。<br />
+これらにいち早く取り組むことで、そのサイト自身のニュース・バリューも上げることができ、さらに大きな波及効果をもたらすことにも効果を生み出すことでしょう。</p>
+    </section>
+        <section>
+    	<h3>一気に変貌したWEB戦略</h3>
+        <p><img src="images/img.png" alt="" width="300" height="177" class="imgRight" />2010年〜2011年、Web戦略分野では、これまでにない大きな変革を迎えました。この変革は、これからの少なくとも5〜10年間の基軸ともなり得る重要な変革であり、それはそのまま顧客マインドの変化とも密にシンクロして起こった事象と言えます。<br />
+その中でも、クラウド・コンピューティング、ソーシャル・ネットワーク、電子書籍、スマートフォン・デジタルデバイスの4つについては、既に一般に広く流布し、今後さらに浸透していく分野と考えられます。<br />
+これから新しいWeb戦略を考えるみなさまにとっては、これらの分野をいち早く、そしていかにうまく取り入れるかが成功の鍵となると考えております。<br />
+これらにいち早く取り組むことで、そのサイト自身のニュース・バリューも上げることができ、さらに大きな波及効果をもたらすことにも効果を生み出すことでしょう。</p>
+    </section>
+</div>
+
+        <!--div id="yohaku"></div-->
+    </div>
+
+    <div id="page-nav">
+        <a id="next" href="index2.html">クリックで読み込む</a>
+    </div>
+    <!-- End Content -->
+</div>
+
+<!-- Include jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+
+<!-- Include infinitescroll -->
+<script src="javascripts/jquery.infinitescroll.min.js"></script>
+<script src="javascripts/manual-trigger.js"></script>
+<!--twitter風の動作にしたい場合はmanual-trigger.jsをインポート-->
+<script>
+    $('#content').infinitescroll({ //自動読み込みを開始判定するエリアを指定
+        loading:{
+            finishedMsg:"No more pages to load.", // 全てのコンテンツの読み込みが終了した場合に画面最下部に表示するメッセージ
+            img: "images/loading.gif", //読み込み中に一時的に表示する画像
+            msgText:"Loading ..." //読み込み中に一時的に表示するメッセージ
+        },
+        behavior: 'twitter', //twitter風の動作にしたい場合はここを有効にする
+        bufferPx:300, //読み込み開始判定エリアの下から何ピクセルに達した場合に読み込みを開始するのか
+        navSelector:"#next", //ページナビゲーションのセレクタ
+        nextSelector:"#next", //ページナビゲーションの中で「次のページ」へのリンクのセレクタ
+        itemSelector:"#content .item", //繰り返したいを行いたいセレクタ。このセレクタが大元のHTMLにも自動的に読み込むHTMLにも含まれている必要があります。この指定内部のHTMLだけが自動で読み込まれます。
+        animate: true // 読み込みが完了したときに、読み込んだコンテンツまで自動でスクロールするかどうか
+    });
+</script>
+</body>
+</html>

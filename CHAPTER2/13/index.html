@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>13-Metro UI CSSで実現するフラットデザイン</title>
+    <link href="styles/modern.css" rel="stylesheet">
+    <!--<link href="styles/theme-dark.css" rel="stylesheet">-->
+    <link href="styles/modern-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" type="text/css"/>
+</head>
+<body class="metrouicss">
+<div class="page">
+    <!--start:navigation bar content-->
+    <div class="nav-bar bg-color-green">
+        <div class="nav-bar-inner padding10">
+            <span class="pull-menu"></span>
+            <a href="#"><span class="element">Product Name</span></a>
+            <span class="divider"></span>
+
+            <ul class="menu">
+                <li data-role="dropdown">
+                    <a>Item 1</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">SubItem 1</a></li>
+                        <li><a href="#">SubItem 2</a></li>
+                        <li><a href="#">SubItem 3</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">SubItem 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="page">
+    <div class="page-region">
+        <div class="page-region-content">
+            <div class="grid">
+                <div class="row">
+                    <div class="span5">
+                        <div class="carousel span5"
+                             style="height: 300px;"
+                             data-role="carousel"
+                             data-param-effect="slide"
+                             data-param-direction="left"
+                             data-param-duration="2000"
+                             data-param-period="4000">
+                            <div class="slides">
+                                <div class="slide image" id="slide1">
+                                    <img src="images/sample.jpg"/>
+                                </div>
+                                <div class="slide image" id="slide2">
+                                    <img src="images/2.jpg"/>
+                                </div>
+                                <div class="slide image" id="slide3">
+                                    <img src="images/3.jpg"/>
+                                </div>
+                            </div>
+
+                            <span class="control left bg-color-blue">&#8249;</span>
+                            <span class="control right bg-color-blue">&#8250;</span>
+
+                        </div>
+                    </div>
+                    <div class="span7 welcomeText">
+                        <br>
+
+                        <h2>Welcome</h2>
+
+                        <p>
+                            Metro UI CSS の紹介サンプルです。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="row">
+                <div class="span4 bg-color-blue">
+                    <img src="http://www.bridgeuniversal.com/wp-content/themes/twentytwelve/images/simple.png"
+                         class="place-right" style="margin: 10px;"/>
+
+                    <h2 class="fg-color-white">&nbsp;Simple</h2>
+                </div>
+
+                <div class="span4 bg-color-green">
+                    <img src="http://www.bridgeuniversal.com/wp-content/themes/twentytwelve/images/grid.png" class="place-right"
+                         style="margin: 10px;"/>
+
+                    <h2 class="fg-color-white">&nbsp;Sufficient</h2>
+                </div>
+
+                <div class="span4 bg-color-yellow">
+                    <img src="http://www.bridgeuniversal.com/wp-content/themes/twentytwelve/images/responsive.png"
+                         class="place-right" style="margin: 10px;"/>
+
+                    <h2 class="fg-color-white">&nbsp;Elegant</h2>
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="offset1 row span11">
+                <!--<div class="span12">-->
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        1
+                    </div>
+                </div>
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        2
+                    </div>
+                </div>
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        3
+                    </div>
+                </div>
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        4
+                    </div>
+                </div>
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        5
+                    </div>
+                </div>
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        6
+                    </div>
+                </div>
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        7
+                    </div>
+                </div>
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        8
+                    </div>
+                </div>
+                <div class="tile bg-color-orangeDark">
+                    <div class="tile-content">
+                        9
+                    </div>
+                </div>
+                <div class="tile icon">
+                    <div class="tile-content">
+                        <img src="images/Mail128.png"/>
+                    </div>
+                    <div class="brand">
+                        <div class="badge">10</div>
+                        <div class="name">Mail</div>
+                    </div>
+                </div>
+                <!--</div>-->
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="row">
+                <div class="span7">
+                    <h2>Welcome</h2>
+
+                    <p>
+                        Metro UI CSS a set of styles to create a site with an interface similar to Windows 8 Metro UI. This set
+                        of styles was developed as a self-contained solution.
+                    </p>
+
+                    <p class="bg-color-blueLight padding20 tertiary-text1">
+                        Metro UI CSS is made with <a href="http://lesscss.org" class="fg-color-blue"><abbr
+                            title="LESS a dynamic stylesheet language created by one good man Alexis Sellier">LESS</abbr></a>.
+                        It makes developing systems-based CSS faster, easier, and more fun.
+                    </p>
+
+                    <p>
+                        <strong>Metro UI CSS is free if you placed back link to Metro UI CSS site.</strong>
+                        <br/>
+                        Example:
+                        <br/>
+                    </p>
+                    <blockquote class="tertiary-text">
+                        Styled with &lt;a href="http://metroui.org.ua"&gt;Metro UI CSS&lt;/a&gt;
+                    </blockquote>
+
+
+                    <h2>Browsers</h2>
+
+                    <div class="browsers-icons clearfix">
+                        <h2 class="place-left" title="Internet Explorer 9+"><i class="icon-IE"></i></h2>
+
+                        <h2 class="place-left" title="Chrome"><i class="icon-chrome"></i></h2>
+
+                        <h2 class="place-left" title="Firefox"><i class="icon-firefox"></i></h2>
+
+                        <h2 class="place-left" title="Opera"><i class="icon-opera"></i></h2>
+
+                        <h2 class="place-left" title="Safari"><i class="icon-safari"></i></h2>
+                    </div>
+
+                    <blockquote class="tertiary-text">
+                        Internet explorer supported from 9 version.
+                    </blockquote>
+                </div>
+                <div class="span5">
+                    <div class="bg-color-blueLight padding10">
+                        <h4>Contact Us</h4>
+
+                        <form action="" method="post">
+                            <div class="input-control text">
+                                <input type="text" placeholder="Enter Name" name="name"/>
+
+                            </div>
+                            <div class="input-control text">
+
+                                <input type="email" placeholder="Input Email" name="email"/>
+
+                            </div>
+
+
+                            <div class="input-control text">
+                                <input type="text" placeholder="Enter subject" name="subject"/>
+
+                            </div>
+
+                            <div class="input-control text">
+                                <input type="text" placeholder="Enter Contact Number" name="number"/>
+
+                            </div>
+                            <div class="input-control textarea">
+                                <textarea name="subject"></textarea>
+                            </div>
+
+                            <input type="submit" value="Submit" name="form_submit"/>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="grid">
+            <div class="row">
+                <div class="span3 tile double bg-color-blue" data-role="tile-slider" data-param-period="3000">
+                    <div class="tile-content">
+                        <h2>Thank you!!</h2>
+                        <h5>ここにも</h5>
+
+                        <p>
+                            なにかテキストを入れてください！！！！！！！！！！！！！！！！！！！
+                        </p>
+                    </div>
+                    <div class="tile-content">
+                        <h2>さらに</h2>
+                        <h5>こっちにも！！！!</h5>
+
+                        <p>
+                            Thanks for...
+                        </p>
+                    </div>
+                </div>
+                <div class="span3 tile double bg-color-pinkDark" data-role="tile-slider" data-param-period="2000">
+                    <div class="tile-content">
+                        <h2>Thank you!!</h2>
+                        <h5>ここにも</h5>
+
+                        <p>
+                            なにかテキストを入れてください！！！！！！！！！！！！！！！！！！！
+                        </p>
+                    </div>
+                    <div class="tile-content">
+                        <h2>さらに</h2>
+                        <h5>こっちにも！！！!</h5>
+
+                        <p>
+                            Thanks for...
+                        </p>
+                    </div>
+                </div>
+                <div class="span3 tile double bg-color-darken" data-role="tile-slider" data-param-period="1700">
+                    <div class="tile-content">
+                        <h2>Thank you!!</h2>
+                        <h5>ここにも</h5>
+
+                        <p>
+                            なにかテキストを入れてください！！！！！！！！！！！！！！！！！！！
+                        </p>
+                    </div>
+                    <div class="tile-content">
+                        <h2>さらに</h2>
+                        <h5>こっちにも！！！!</h5>
+
+                        <p>
+                            Thanks for...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page">
+    <div class="nav-bar bg-color-green">
+        <div class="nav-bar-inner padding10">
+                <span class="element">
+                    &copy; 2013 このフッターを入れておけばMetroUICSSはフリーです。→ <small>Styled with <a class="fg-color-white"
+                                                                                      href="http://metroui.org.ua">Metro
+                    UI CSS</a></small>
+                </span>
+        </div>
+    </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+<script type="text/javascript" src="javascripts/carousel.js"></script>
+<script type="text/javascript" src="javascripts/dropdown.js"></script>
+<script type="text/javascript" src="javascripts/tile-slider.js"></script>
+</body>
+
+</html>

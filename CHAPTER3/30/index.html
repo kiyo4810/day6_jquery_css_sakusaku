@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+        <title>30-ドラッグ&ドロップで利用できる画像ファイルアップローダー</title>
+        <link rel="stylesheet" href="styles/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="styles/prettify.css" rel="stylesheet" />
+        <link rel="stylesheet" href="styles/fineuploader-3.6.4.css" rel="stylesheet" />
+        <link rel="stylesheet" href="styles/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>MdN - ファイルアップロード</h1>
+        </header>
+        <div class="container">
+            <h2>ファイルアップロードサンプル</h2>
+            <div class="alert alert-error active">
+                ドラッグ＆ドロップでのファイルアップロード(IE不可)およびサムネイル表示を行うサンプルです。<br />
+                サーバサイドは未配備なのでアップロード処理は固定画像としています。<br />
+                本サンプルでは固定レスポンスの為、FineUploaderのプロパティ【demoMode: true】を指定して、<br />
+                GET通信を行っていますが、実際は同プロパティを設定せずPOST通信で行ってください。
+            </div>
+            <div id="manual-fine-uploader"></div>
+            <div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
+                <i class="icon-upload icon-white"></i> アップロードする
+            </div>
+            <br /><br /><br />
+            <p id="codeTitle"><code>サーバサイドプログラムサンプル(JavaServlet)</code></p>
+            <pre class="prettyprint linenums">
+/**
+ * &lt;p&gt;
+ *   ファイルを送信された後のサーバサイド処理です。&lt;br /&gt;
+ *   このサンプルはApache Commons FileUploadが必要です。
+ * &lt;/p&gt;
+ * 
+ * @param request HTTPリクエスト
+ * @param response HTTPレスポンス
+ */
+public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException{
+
+    // クロスドメインの場合はアクセス元ドメインを任意に設定
+    this.setOrigin(request, response);
+    
+    // iFrameのリクエストか判定
+    boolean isIframe = request.getHeader("X-Requested-With") == null || !request.getHeader("X-Requested-With").equals("XMLHttpRequest");
+    String uuid = null;
+
+    // ファイルの保存場所を指定
+    String path = this.getClass().getClassLoader().getResource("").getPath().replace("WEB-INF/classes/", "UL/");
+
+    DiskFileItemFactory factory = new DiskFileItemFactory();
+    ServletFileUpload upload = new ServletFileUpload(factory);
+    try {
+        
+         List<?>list = upload.parseRequest(request);
+         Iterator<?> iterator = list.iterator();
+         while(iterator.hasNext()){
+           FileItem fItem = (FileItem)iterator.next();
+           // iFrameのクロスドメイン対応用にuuidを取得
+           if ("qquuid".equals(fItem.getFieldName())) {
+               uuid = fItem.getString();
+           }
+           // POSTデータがフォームデータじゃない場合(=ファイル)
+           if(!(fItem.isFormField())){
+             String fileName = fItem.getName();
+             if((fileName != null) && (!fileName.equals(""))){
+               fileName=(new File(fileName)).getName();
+               fItem.write(new File(path + fileName));
+             }
+           }
+         }
+    } catch (Exception e) {
+        // 例外処理
+    }
+       
+    if (isIframe) {
+      response.setContentType("text/html; charset=UTF-8")
+      out.print("{\"success\": true, \"uuid\": \""+ uuid + "\"}");
+      // ドメイン名はフルパスで記載する。
+      out.print("&lt;script src='http://{ドメイン}/javascripts/iframe.xss.response-3.6.4.js'&gt;&lt;/script&gt;");	
+    } else {
+      response.setContentType("application/json; charset=UTF-8");
+      out.print("{\"success\": true}");
+    }
+    out.close();
+}
+
+/**
+ * &lt;p&gt;
+ *   クロスドメイン対策の為、送信元ドメインをすべて許可します&lt;br /&gt;
+ *   ※ServletFilterに記載しても良い。
+ * &lt;/p&gt;
+ * @param request HTTPリクエスト
+ * @param response HTTPレスポンス
+ */
+private void setOrigin(HttpServletRequest request, HttpServletResponse response) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE, OPTIONS");
+    response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
+    response.setHeader("Access-Control-Max-Age", "-1");
+}
+</pre>
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+        <script src="javascripts/prettify.js"></script>
+        <script src="javascripts/jquery.fineuploader-3.6.4.min.js"></script>
+        <script src="javascripts/bootstrap.min.js"></script>
+        <script>
+            var existThumbnail = false;
+            $(document).ready(function() {
+                var manualuploader = new qq.FineUploader({
+                    element: $('#manual-fine-uploader')[0],// ファイル添付機能をつけるDIVタグを指定
+                    request: {
+                        endpoint: "success.html" //ファイルの送信先。クロスドメイン処理の場合、POST/OPTIONSメソッドに「Access-Control-Allow-Origin」が必要 
+                    },
+                    cors: { 
+                        // IEでのクロスドメイン許可設定
+                        // クロスドメイン環境でIEを利用する場合は以下の２項目をtrueに設定して下さい。
+                        expected: false,
+                        sendCredentials: false
+                    },
+                    debug: true,
+                    demoMode: true,
+                    autoUpload: false, // 自動アップロードしない
+                    text: { // ボタン名の変更
+                        uploadButton: '<i class="icon-plus icon-white"></i> Drag or Click',
+                        cancelButton: 'キャンセル',
+                        retryButton: '再実行',
+                        deleteButton: '削除',
+                        dragZone: '対象ファイルをドラッグ＆ドロップしてください。'
+                    },
+                    messages: { // メッセージの変更
+                        typeError: "{file} は拡張子が誤っています。. 対応している拡張子は【{extensions}】です。",
+                        sizeError: "{file} はファイルサイズ上限を超えています。最大ファイルサイズは {sizeLimit}バイトです。"
+                    },
+                    validation: { // 入力チェック
+                        allowedExtensions: ['jpeg', 'jpg', 'txt'], // 拡張子チェック
+                        sizeLimit: 1024 * 1024 // サイズチェック(バイト単位)
+                    },
+                    showMessage: function(message) { // エラーメッセージの画面表示
+                        $('#manual-fine-uploader').append(
+                            '<div class="alert alert-error"><button class="close" data-dismiss="alert">&times;</button>' + message + '</div>'
+                        );
+                    },
+                    callbacks: { // コールバックメソッド群
+                        onSubmit: function(id, fileName) {},
+                        onUpload: function(id, fileName) {},
+                        onError: function(id, fileName, reason, maybeXhr) {},
+                        onCancel: function(id, fileName){},
+                        onComplete: function(id, fileName, responseJSON) {
+                            if (responseJSON.success) {
+                                if (!existThumbnail) {
+                                    $('#manual-fine-uploader').append(
+                                        "<span class='label label-info' style='margin-top: 15px'>サムネイル" + 
+                                        "<span id='thumbnailNum' class='badge badge-success'></span></span><br />");
+                                    existThumbnail = true;
+                                }
+                                fileName = "sample.gif"; // 静的サンプルのためにfile名固定
+                                $('#manual-fine-uploader').append('<img src="img/' + fileName + '" alt="' + fileName+ '">');
+                                $("#thumbnailNum").html($("#manual-fine-uploader > img").length);
+                            }
+                        }
+                    }
+                });
+                $('#triggerUpload').click(function() {
+                    manualuploader.uploadStoredFiles();
+                });
+                prettyPrint();
+            });
+        </script>
+    </body>
+<html>

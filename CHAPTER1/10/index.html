@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>10-スマートフォンで利用するアドレス帳のような動作</title>
+    <link rel="stylesheet" type="text/css" href="styles/slidernav.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="javascripts/slidernav-min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#transformers').sliderNav({items:['あ', 'か', 'さ', 'た', 'な', 'は', 'ま', 'や', 'ら', 'わ'], height:300, arrows:true});
+        });
+    </script>
+</head>
+<body>
+<h2>支店一覧</h2>
+
+<div id="transformers">
+    <div class="slider-content">
+        <ul>
+            <li id="あ"><a name="あ" class="title">あ</a>
+                <ul>
+                    <li><a href="#">赤穂支店</a></li>
+                    <li><a href="#">荒川営業所</a></li>
+                    <li><a href="#">稲毛支店</a></li>
+                </ul>
+            </li>
+            <li id="か"><a name="か" class="title">か</a>
+                <ul>
+                    <li><a href="#">烏山支店</a></li>
+                    <li><a href="#">木更津支店</a></li>
+                    <li><a href="#">小平支店</a></li>
+                </ul>
+            </li>
+            <li id="さ"><a name="さ" class="title">さ</a>
+                <ul>
+                    <li><a href="#">佐倉支店</a></li>
+                    <li><a href="#">品川支店</a></li>
+                    <li><a href="#">瀬戸営業所</a></li>
+                </ul>
+            </li>
+            <li id="た"><a name="た" class="title">た</a>
+                <ul>
+                    <li><a href="#">鶴見支店</a></li>
+                    <li><a href="#">西東京倉庫</a></li>
+                </ul>
+            </li>
+            <li id="な"><a name="な" class="title">な</a>
+                <ul>
+                    <li><a href="#">那須支店</a></li>
+                    <li><a href="#">那須塩原営業所</a></li>
+                    <li><a href="#">中野倉庫</a></li>
+                    <li><a href="#">沼津支店</a></li>
+                </ul>
+            </li>
+            <li id="は"><a name="は" class="title">は</a>
+                <ul>
+                    <li><a href="#">橋本支店</a></li>
+                    <li><a href="#">東東京倉庫</a></li>
+                </ul>
+            </li>
+            <li id="ま"><a name="ま" class="title">ま</a>
+                <ul>
+                    <li><a href="#">町田支店</a></li>
+                    <li><a href="#">目黒支店</a></li>
+                </ul>
+            </li>
+            <li id="や"><a name="や" class="title">や</a>
+                <ul>
+                    <li><a href="#">矢板倉庫</a></li>
+                </ul>
+            </li>
+            <li id="ら"><a name="ら" class="title">ら</a>
+                <ul>
+                    <li><a href="#">ロシア支社</a></li>
+                </ul>
+            </li>
+            <li id="わ"><a name="わ" class="title">わ</a>
+                <ul>
+                    <li><a href="#">若狭倉庫</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

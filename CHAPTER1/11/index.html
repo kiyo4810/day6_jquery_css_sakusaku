@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+        <title>11-マウスのドラッグ操作で本のようにページ遷移するUI</title>
+        <link rel="stylesheet" href="styles/styles.css" type="text/css" />
+    </head>
+    <body>
+    <header>
+        <h1>MdN - ページめくり</h1>
+    </header>
+    <div class="container">
+        <h2>ページめくりサンプル</h2>
+        <h3>
+        キーボードの左右ボタンでページをめくることも可能です。<br />
+        </h3><br /><br />
+        <!-- turn.js適用対象-->
+        <div id="magazine">
+            <div style="background-color: #F5DEB3;">
+                <div class="table-contents">
+                    <h1>Contents</h1>
+                    <ul>
+                        <li><a href="#" onClick="doPaging(3);">AAAAA <span>3</span></a></li>
+                        <li><a href="#" onClick="doPaging(6);">BBBBB <span>6</span></a></li>
+                        <li><a href="#" onClick="doPaging(9);">CCCCC <span>9</span></a></li>
+                        <li><a href="#" onClick="doPaging(10);">DDDDD <span>10</span></a></li>
+                        <li><a href="#" onClick="doPaging(15);">Dynamic Page <span>15</span></a></li>
+                        <li><a href="#" onClick="doPaging(25);">Dynamic Page <span>25</span></a></li>
+                        <li><a href="#" onClick="doPaging(30);">Dynamic Page <span>30</span></a></li>
+                        <li><a href="#" onClick="doPaging(45);">Dynamic Page <span>45</span></a></li>
+                        <li><a href="#" onClick="doPaging(60);">Dynamic Page <span>60</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background-image:url(images/topslide01.png);"></div>
+            <div style="background-image:url(images/topslide02.png);"></div>
+            <div style="background-image:url(images/topslide03.png);"></div>
+            <div style="background-image:url(images/01.jpg);"></div>
+            <div style="background-image:url(images/02.jpg);"></div>
+            <div style="background-image:url(images/03.jpg);"></div>
+            <div style="background-image:url(images/04.jpg);"></div>
+            <div style="background-image:url(images/05.jpg);"></div>
+            <div style="background-image:url(images/06.jpg);"></div>
+        </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script src="javascripts/turn.js"></script>
+    <script>
+        var numberOfPages = 63;
+        var imgDir = "images/dynamic/";
+        var imgPrefix = "g";
+        $(window).ready(function() {
+            $('#magazine').turn({
+                display: 'double',
+                pages: numberOfPages,
+                acceleration: true,
+                elevation:50,
+                when: {
+                    turning: function(e, page, view) {
+                         /* 移動先の前後ページの動的ページを読み込む */
+                        var range = $("#magazine").turn("range", page);
+                        for (var page = range[0]; page<=range[1]; page++){
+                            if (!$("#magazine").turn("hasPage", page)) {
+                                var imgName = imgPrefix + (page - 10) + ".jpg"
+                                var element = document.createElement("div"); 
+                                element.className= "dynamicImg"; 
+                                element.style.backgroundImage =  "url('" + imgDir + imgName +"')";
+                                element.innerHTML = "Dynamic Page :" + page;
+                                $("#magazine").turn("addPage", element, page);
+                            }
+                        }
+                    }
+                }
+            });
+            $(window).bind('keydown', function(e){
+                if (e.keyCode==37) {
+                    $('#magazine').turn('previous');
+                } else if (e.keyCode==39) {
+                    $('#magazine').turn('next');
+                }
+            });
+        });
+        function doPaging(page) {
+            $('#magazine').turn('page', page);
+            return false;
+        }
+    </script>
+</body>
+</html>

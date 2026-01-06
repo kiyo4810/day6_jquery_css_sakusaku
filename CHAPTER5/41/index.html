@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>41-Gmap3を活用したGoogleマップのカスタマイズ</title>
+    <link rel="stylesheet" href="./styles/styles.css" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <h1>MdN - ツールボックス</h1>
+        <h2>GoogleMap</h2>
+    </header>
+    <div class="container">
+    <!-- Start Content -->
+        <div id="GoogleMap">
+        <!-- GoogleMap -->
+        </div>
+    <!-- // End Content -->
+    </div>
+    <a href="route_sample.html" >ルート検索</a>
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>    
+    <script type="text/javascript" src="./javascripts/gmap3.min.js"></script>
+    <script type="text/javascript">
+    jQuery(function()
+        {
+            $('#GoogleMap').gmap3(
+                {
+                    map:{
+                        options:{
+                            center:[35.467835, 139.621789],
+                            zoom:17
+                        }
+                    },
+                    polyline:{
+                        options:{
+                            strokeColor:"red",
+                            strokeOpacity:0.6,
+                            strokeWeight:4,
+                            path:[
+                                [35.466328,139.622041],
+                                [35.467399,139.622454],
+                                [35.467940,139.622588],
+                                [35.468115,139.621121],
+                                [35.468945,139.621097],
+                                [35.468818,139.619555],
+                                [35.468945,139.61959]
+                            ]
+                        }
+                    },
+                    marker:{
+                        values:[
+                            {
+                                latLng:[35.468945,139.61959],
+                                data: '<span style="font-size : 125%;"><a href="http://www.ardito.jp/">株式会社アルディート</a></span><br />〒221-0835<br />神奈川県横浜市神奈川区鶴屋町3-30-5<br />タクエー横浜西口ビル4階',
+                                options:{
+                                    icon:new google.maps.MarkerImage(
+                                    "./images/icon-service-company.png", // 画像URL
+                                    new google.maps.Size(35, 35), // 画像のサイズ
+                                    new google.maps.Point(0, 0), // 画像のposition
+                                    new google.maps.Point(0, 0) // 画像のアンカーの位置
+                                    )
+                                }
+                            }
+                        ],
+                        events:{
+                            // マウスオーバ
+                            mouseover:function(marker,event,context){
+                                var map = $(this).gmap3('get');
+                                var win = $(this).gmap3({get:{name:'infowindow'}});
+                                if(win){
+                                    win.open(map,marker);
+                                    win.setContent(context.data);
+                                }else{
+                                    $(this).gmap3({
+                                        infowindow:{
+                                            anchor:marker,
+                                            options:{content:context.data}
+                                        }
+                                    });
+                                }
+                            },
+                            mouseout: function(){
+                                var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+                                if (infowindow){
+                                    infowindow.close();
+                                }
+                            }
+                        }
+                    }
+                }
+            );
+        }
+    );
+    </script>
+</body>
+</html>

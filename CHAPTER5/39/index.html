@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>39-YouTubeの動画コンテンツをレスポンシブに表示する</title>
+    <link rel="stylesheet" href="styles/styles.css" type="text/css" />
+</head>
+<body>
+
+    <header>
+    <h1>MdN - YouTube</h1>
+    <h2>youtube連携サンプル</h2>
+    </header>
+
+    <div class="container">
+    <!-- Start Content -->
+      <!-- divにidを指定 -->
+      <h5>画面サイズに合わせてレスポンシブに拡大縮小します</h5>
+      <div id="sample">
+        <iframe width="640" height="480" src="//www.youtube.com/embed/XHVrKhwuRzA"></iframe>
+      </div>
+    <!-- // End Content -->
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="javascripts/jquery.fitvids.js"></script>
+    <script>
+        $(function() {
+            $("#sample").fitVids();
+        });
+    </script>
+
+</body>
+</html>

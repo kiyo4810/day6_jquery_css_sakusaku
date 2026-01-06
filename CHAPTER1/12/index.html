@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>12-Facebookアプリのように横から出てくるサイドメニュー</title>
+    <link rel="stylesheet" href="styles/styles.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="styles/snap.css"/>
+</head>
+<body>
+
+<!--<header>-->
+<!--<h1>MdN - ツールボックス</h1>-->
+
+<!--<h2>スクロールのパララックス</h2>-->
+<!--</header>-->
+
+
+<!--<div class="container">-->
+<!-- Start Content -->
+
+<div class="snap-drawers">
+    <div class="snap-drawer snap-drawer-left">
+        <!--[左メニューに表示するコンテンツ]-->
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#">最新のWeb技術</a></li>
+          <li><a href="#">一気に変貌したWeb戦略</a></li>
+          <li><a href="#">Social Media</a></li>
+          <li><a href="#">Smart Phone</a></li>
+          <li><a href="#">CMS</a></li>
+          <li><a href="http://ardito.jp">Ardito</a></li>
+          <li><a href="http://www.facebook.com/woorks">WOORKS</a></li>
+        </ul>
+        <div>
+            <p><br/><br/><br/>スマートフォンやタブレット対応済み。ドラッグの無効化や開閉速度、イベントのフックなど可能です。</p>
+        </div>
+    </div>
+    <div class="snap-drawer snap-drawer-right">
+        <!--[右メニューに表示するコンテンツ]-->
+        <ul>
+            <li><a href="#">HTML5</a></li>
+            <li><a href="#">CSS3</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">Bootstrap</a></li>
+            <li><a href="#">CMS</a></li>
+        </ul>
+    </div>
+</div>
+<div id="content" class="snap-content" style="opacity:0.8;">
+    <div id="toolbar" class="absolute">
+        <a href="#" id="open-left"></a>
+
+        <h1>Facebook風メニュー</h1>
+    </div>
+    <div class="no-swipe" data-snap-ignore="true">
+    <section>
+    	<h3>最新のWeb技術を最適の戦略で</h3>
+        <p><img src="images/img.png" alt="" width="300" height="177" class="imgLeft" />2010年〜2011年、Web戦略分野では、これまでにない大きな変革を迎えました。この変革は、これからの少なくとも5〜10年間の基軸ともなり得る重要な変革であり、それはそのまま顧客マインドの変化とも密にシンクロして起こった事象と言えます。<br />
+その中でも、クラウド・コンピューティング、ソーシャル・ネットワーク、電子書籍、スマートフォン・デジタルデバイスの4つについては、既に一般に広く流布し、今後さらに浸透していく分野と考えられます。<br />
+これから新しいWeb戦略を考えるみなさまにとっては、これらの分野をいち早く、そしていかにうまく取り入れるかが成功の鍵となると考えております。<br />
+これらにいち早く取り組むことで、そのサイト自身のニュース・バリューも上げることができ、さらに大きな波及効果をもたらすことにも効果を生み出すことでしょう。</p>
+    </section>
+        <section>
+    	<h3>一気に変貌したWEB戦略</h3>
+        <p><img src="images/img.png" alt="" width="300" height="177" class="imgRight" />2010年〜2011年、Web戦略分野では、これまでにない大きな変革を迎えました。この変革は、これからの少なくとも5〜10年間の基軸ともなり得る重要な変革であり、それはそのまま顧客マインドの変化とも密にシンクロして起こった事象と言えます。<br />
+その中でも、クラウド・コンピューティング、ソーシャル・ネットワーク、電子書籍、スマートフォン・デジタルデバイスの4つについては、既に一般に広く流布し、今後さらに浸透していく分野と考えられます。<br />
+これから新しいWeb戦略を考えるみなさまにとっては、これらの分野をいち早く、そしていかにうまく取り入れるかが成功の鍵となると考えております。<br />
+これらにいち早く取り組むことで、そのサイト自身のニュース・バリューも上げることができ、さらに大きな波及効果をもたらすことにも効果を生み出すことでしょう。</p>
+    </section>
+        <section>
+    	<h3>Social Media – Facebookのビジネス活用</h3>
+        <p><img src="images/img.png" alt="" width="300" height="177" class="imgLeft" />2010年〜2011年、Web戦略分野では、これまでにない大きな変革を迎えました。この変革は、これからの少なくとも5〜10年間の基軸ともなり得る重要な変革であり、それはそのまま顧客マインドの変化とも密にシンクロして起こった事象と言えます。<br />
+その中でも、クラウド・コンピューティング、ソーシャル・ネットワーク、電子書籍、スマートフォン・デジタルデバイスの4つについては、既に一般に広く流布し、今後さらに浸透していく分野と考えられます。<br />
+これから新しいWeb戦略を考えるみなさまにとっては、これらの分野をいち早く、そしていかにうまく取り入れるかが成功の鍵となると考えております。<br />
+これらにいち早く取り組むことで、そのサイト自身のニュース・バリューも上げることができ、さらに大きな波及効果をもたらすことにも効果を生み出すことでしょう。</p>
+    </section>
+    </div>
+</div>
+
+
+<!-- // End Content -->
+<!--</div>-->
+
+<!-- Include jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../common/javascripts/jquery.min.js"><\/script>')</script>
+<!-- Include snap.js -->
+<script type="text/javascript" src="javascripts/snap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var snapper;
+        snapper = new Snap({
+            element:$('#content')[0]
+        });
+        $('#open-left').on('click', function (e) {
+            if (snapper.state().state == "left") {
+                snapper.close();
+            } else {
+                snapper.open('left');
+            }
+        });
+    });
+</script>
+</body>
+</html>

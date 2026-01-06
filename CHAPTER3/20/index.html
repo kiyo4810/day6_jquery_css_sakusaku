@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <meta name="description" content="A lightweight CSS3 image gallery that is pretty to look and and easy to use">
+    <meta name="viewport" content="width=device-width">
+    <title>20-photoboxを使ったおしゃれな写真ギャラリー</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles/photobox.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+        <header>
+          <h1>MdN - おしゃれなギャラリー</h1>
+          <h2>Photobox - CSS3 jQuery image gallery</h2>
+        </header>
+
+        <div class="container">
+        <!-- Start Content -->
+
+        <div id='gallery'>
+            <a href="images/big.jpg">
+              <img src="images/small.jpg" alt="サンプル１">
+            </a>
+            <a href="images/big2.jpg">
+              <img src="images/small2.jpg" alt="サンプル２">
+            </a>
+            <a href="images/big3.jpg">
+              <img src="images/small3.jpg" alt="サンプル３">
+            </a>
+            <a href="images/big4.jpg">
+              <img src="images/small4.jpg" alt="サンプル４">
+            </a>
+            <a href="images/big5.jpg">
+              <img src="images/small5.jpg" alt="サンプル５">
+            </a>
+            <a href="images/big6.jpg">
+              <img src="images/small6.jpg" alt="サンプル６">
+            </a>
+            <a href="images/big7.jpg">
+              <img src="images/small7.jpg" alt="サンプル７">
+            </a>
+            <a href="images/big8.jpg">
+              <img src="images/small8.jpg" alt="サンプル８">
+            </a>
+            <a href="images/big9.jpg">
+              <img src="images/small9.jpg" alt="サンプル９">
+            </a>
+            <a href="images/big10.jpg">
+              <img src="images/small10.jpg" alt="サンプル１０">
+            </a>
+            <a href="images/big11.jpg">
+              <img src="images/small11.jpg" alt="サンプル１１">
+            </a>
+            <a href="images/big12.jpg">
+              <img src="images/small12.jpg" alt="サンプル１２">
+            </a>
+            <a href="images/big13.jpg">
+              <img src="images/small13.jpg" alt="サンプル１３">
+            </a>
+            <a href="images/big14.jpg">
+              <img src="images/small14.jpg" alt="サンプル１４">
+            </a>
+            <a href="images/big15.jpg">
+              <img src="images/small15.jpg" alt="サンプル１５">
+            </a>
+            <a href="images/big16.jpg">
+              <img src="images/small16.jpg" alt="サンプル１６">
+            </a>
+            <a href="images/big17.jpg">
+              <img src="images/small17.jpg" alt="サンプル１７">
+            </a>
+            <a href="images/big18.jpg">
+              <img src="images/small18.jpg" alt="サンプル１８">
+            </a>
+            <a href="images/big19.jpg">
+              <img src="images/small19.jpg" alt="サンプル１９">
+            </a>
+            <a href="images/big20.jpg">
+              <img src="images/small20.jpg" alt="サンプル２０">
+            </a>
+            <a href="images/big21.jpg">
+              <img src="images/small21.jpg" alt="サンプル２１">
+            </a>
+            <a href="images/big22.jpg">
+              <img src="images/small22.jpg" alt="サンプル２２">
+            </a>
+            <a href="images/big23.jpg">
+              <img src="images/small23.jpg" alt="サンプル２３">
+            </a>
+            <a href="images/big24.jpg">
+              <img src="images/small24.jpg" alt="サンプル２４">
+            </a>
+            <a href="images/big25.jpg">
+              <img src="images/small25.jpg" alt="サンプル２５">
+            </a>
+        </div>
+
+        <!-- // End Content -->
+        </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src='javascripts/photobox.js'></script>
+    <script>
+        $('#gallery').photobox('a',{zoomable:true},imageLoaded);
+        function imageLoaded(){
+            console.log('image has been loaded...');
+        }
+    </script>
+
+</body> 
+</html>

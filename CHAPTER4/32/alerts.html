@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+  <meta charset="utf-8">
+  <title>Bootstrap, from Twitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <!-- Le styles -->
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/bootstrap-responsive.min.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .sidebar-nav {
+      padding: 9px 0;
+    }
+    
+    @media (max-width: 980px) {
+      /* Enable use of floated navbar text */
+      body {
+        padding-top: 0;
+      } 
+      .navbar-text.pull-right {
+        float: none;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  </style>
+  </head>
+  
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">Bootstrap</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+          ログイン中 <a href="#" class="navbar-link">BootUser</a>
+          </p>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Sidebar</li>
+            <li><a href="./index.html">Index</a></li>
+            <li><a href="./navi.html">Navi</a></li>
+            <li><a href="./sidebar.html">Sidebar</a></li>
+            <li><a href="./grid.html">Grid</a></li>
+            <li><a href="./table.html">Table</a></li>
+            <li><a href="./code_pre.html">Code_Pre</a></li>
+            <li><a href="./button.html">Button</a></li>
+            <li><a href="./icon.html">Icon</a></li>
+            <li><a href="./responsive.html">Responsive</a></li>
+            <li><a href="./breadcrumbs.html">Breadcrumbs</a></li>
+            <li><a href="./pagination.html">Pagination</a></li>
+            <li><a href="./labels_and_badges.html">Lables and Badges</a></li>
+            <li class="active"><a href="./alerts.html">Alerts</a></li>
+          </ul>
+        </div><!--/.sidebar-nav -->
+      </div><!--/.span3-->
+    
+      <div class="span9">
+        
+        <div class="row-fluid">
+
+          <legend><h3>アラートの作り方</h3></legend>
+          <div>
+            <div class="alert">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Warning!</strong> ×をクリックすると消えます。
+              このアラートは、デフォルトのアラートです。
+            </div>
+
+            <div class="alert alert-error">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Error!</strong> ×をクリックすると消えます。
+              このアラートは、<code>alert-error</code>クラスを使って作成しました。
+            </div>
+
+            <div class="alert alert-success">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>success!</strong> ×をクリックすると消えます。
+              このアラートは、<code>alert-success</code>クラスを使って作成しました。
+            </div>
+
+            <div class="alert alert-info">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>info!</strong> ×をクリックすると消えます。
+              このアラートは、<code>alert-info</code>クラスを使って作成しました。
+            </div>
+
+            <div class="alert alert-block">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <h4 class="alert-heading">Alert！</h4>このアラートは、<code>alert-block</code><code>alert-heading</code>クラスを使って作成しました。<br />このアラートは、<code>alert-block</code><code>alert-heading</code>クラスを使って作成しました。<br />このアラートは、<code>alert-block</code><code>alert-heading</code>クラスを使って作成しました。<br />このアラートは、<code>alert-block</code><code>alert-heading</code>クラスを使って作成しました。<br />このアラートは、<code>alert-block</code><code>alert-heading</code>クラスを使って作成しました。<br />このアラートは、<code>alert-block</code><code>alert-heading</code>クラスを使って作成しました。<br />このアラートは、<code>alert-block</code><code>alert-heading</code>クラスを使って作成しました。<br />
+            </div>
+            <ul>
+              <li>閉じるボタンとテキストを作成し、alertクラスを設定したdivタグでラップします。</li>
+              <li>デフォルトのアラート以外に3種類のアラートが用意されています。<code>alert-error</code><code>alert-success</code><code>alert-info</code><br />alertクラスと合わせて使います。</li>
+              <li><code>alert-block</code>は上下に余白をつくります。アラートの中に表示するメッセージが長文になるときに使うと便利です。</li>
+              <li><code>alert-heading</code>を使うと、タイトルつけたアラートを表示することができます。</li>
+            </ul>
+          </div>
+
+          <div>
+            <legend><h3>モバイルSafari、モバイルOperaブラウザの対応</h3></legend>
+            <div class="alert alert-info">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                <strong>aタグのhref属性を<code>href="#"</code>と設定する必要があります。</strong> 
+                <p>このアラートは、モバイルSafari、モバイルOperaブラウザで閉じることができます。</p>
+            </div>
+            <div class="alert alert-info">
+                <a class="close" data-dismiss="alert">&times;</a>
+                <strong>href属性を設定していない場合</strong>
+                <p>このアラートは、モバイルSafari、モバイルOperaブラウザで閉じることができません。</p>
+                <p class="help-block">モバイルchrome、Mercuryブラウザも閉じることができません。</p>
+            </div>
+
+            <div class="alert alert-info">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>buttonタグを使う場合はtype属性を<code>type="button"</code>とする必要があります。</strong>
+                <p>このアラートは、モバイルSafari、モバイルOperaブラウザで閉じることができます。</p>
+            </div>
+          </div>
+
+        </div>
+      </div> <!--/.span9-->
+    </div><!--/.fluid-row-->
+  </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+  <meta charset="utf-8">
+  <title>Bootstrap, from Twitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <!-- Le styles -->
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/bootstrap-responsive.min.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .sidebar-nav {
+      padding: 9px 0;
+    }
+    
+    @media (max-width: 980px) {
+      /* Enable use of floated navbar text */
+      body {
+        padding-top: 0;
+      } 
+      .navbar-text.pull-right {
+        float: none;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  </style>
+  </head>
+  
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">Bootstrap</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+          ログイン中 <a href="#" class="navbar-link">BootUser</a>
+          </p>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Sidebar</li>
+            <li><a href="./index.html">Index</a></li>
+            <li><a href="./navi.html">Navi</a></li>
+            <li><a href="./sidebar.html">Sidebar</a></li>
+            <li><a href="./grid.html">Grid</a></li>
+            <li><a href="./table.html">Table</a></li>
+            <li><a href="./code_pre.html">Code_Pre</a></li>
+            <li><a href="./button.html">Button</a></li>
+            <li><a href="./icon.html">Icon</a></li>
+            <li><a href="./responsive.html">Responsive</a></li>
+            <li><a href="./breadcrumbs.html">Breadcrumbs</a></li>
+            <li><a href="./pagination.html">Pagination</a></li>
+            <li><a href="./labels_and_badges.html">Lables and Badges</a></li>
+            <li><a href="./alerts.html">Alerts</a></li>
+          </ul>
+        </div><!--/.sidebar-nav -->
+      </div><!--/.span3-->
+    
+      <div class="span9">
+        
+        <div class="row-fluid">
+
+          <legend><h3>メディアリストの作り方</h3></legend>
+          <p>アイコンや見出し、本文などを含むコンテンツをツリー状に表示する。
+          ブログコメントや、ツィートなど、テキストコンテンツの左右にイメージ画像を配置するようなコンポーネント</p>
+          <div class="bs-docs-example">
+            <div class="media">
+              <a class="pull-left" href="#">
+                <img class="media-object" src="http://placehold.it/64x64" alt="">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+            <div class="media">
+              <a class="pull-left" href="#">
+                <img class="media-object" src="http://placehold.it/64x64" alt="">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img class="media-object" src="http://placehold.it/64x64" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">Media heading</h4>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  </div>
+                </div>
+              </div>
+              <ul>
+                <li>画像をmediaでラップ。コンテンツをmedia-bodyでラップ。見出しはmedia-heading。</li>
+                <li><a href="http://weblibrary.s224.xrea.com/bootstrap/components/media_object.html">参考サイト</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <legend><h3>メディアリストの作り方2</h3></legend>
+          <div class="bs-docs-example">
+            <ul class="media-list">
+              <li class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://placehold.it/64x64" alt="">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Media heading</h4>
+                  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                  <!-- Nested media object -->
+                  <div class="media">
+                    <a class="pull-left" href="#">
+                      <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">Nested media heading</h4>
+                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                      <!-- Nested media object -->
+                      <div class="media">
+                        <a class="pull-left" href="#">
+                          <img class="media-object" src="http://placehold.it/64x64" alt="">
+                        </a>
+                        <div class="media-body">
+                          <h4 class="media-heading">Nested media heading</h4>
+                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Nested media object -->
+                  <div class="media">
+                    <a class="pull-left" href="#">
+                      <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">Nested media heading</h4>
+                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="media">
+                <a class="pull-right" href="#">
+                  <img class="media-object" src="http://placehold.it/64x64" alt="">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div> <!--/.span9-->
+    </div><!--/.fluid-row-->
+  </div><!--/.fluid-container-->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

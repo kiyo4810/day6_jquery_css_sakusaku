@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+  <link href="styles/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
+  <link href="styles/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+  <title>09-スクロールに応じて自動的にナビゲーションを切り替える</title>
+
+</head>
+
+<body data-spy="scroll">
+
+      <div id="navbarTest" class="navbar">
+        <div class="navbar-inner">
+          <div class="container" >
+            <a class="brand" href="#">Bootstrap-scrollspy.js&nbsp;&nbsp;サンプル</a>
+            <ul class="nav">
+              <li><a href="#first">１項目目</a></li>
+              <li><a href="#second">２項目目</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">ドロップダウンリストから選択 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#one">hタグのidに移動</a></li>
+                  <li><a href="#two">pタグのidに移動</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#three">imgタグのidに移動</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="span2"></div>
+      <div class="span8">
+
+        <div data-spy="scroll" data-target="#navbarTest" data-offset="0" class="scrollspy-example">
+          <h4 id="first">１項目目</h4>
+          <p>１段落目
+          <br /><br />
+          </p>
+          <p>スクロールスパイプラグインは、ターゲット指定したコンテンツのスクロールポジションを
+          <p>自動でナビエゲートを更新させるためのプラグインです。 ナビゲーションバー下のコンテンツ領域をスクロールさせてみてください。
+          <p>そして、active classの変化を見てください。
+          <p>ドロップダウンサブメニューも同様にハイライトが移動します。
+          <br /><br /><br /><br /><br /><br /><br /><br />
+          <h4 id="second">２項目目</h4>
+          <p>２段落目
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          </p>
+          <h4 id="one">hタグに移動されました</h4>
+          <p>id="one"と指定されたh4タグです。ハイライトが移動しているのが確認できると思います。
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          </p>
+          <p>１つ目の選択時にこの段落が表示されます。
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          </p>
+          <h4>pタグに移動されました</h4>
+          <p id="two">id="two"と指定されたpタグです。
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          </p>
+          <h4>id="three"と指定されたimgタグです。</h4>
+          <img src="images/sample.jpg" id="three" />
+        </div>
+      </div>
+      
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+  <script src="javascripts/bootstrap.min.js"></script>
+</body>
+
+</html>

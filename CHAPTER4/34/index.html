@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>34-表示位置や表示時間を簡単に制御できるツールチップ</title>
+<link rel="stylesheet" href="styles/styles.css" type="text/css" />
+<link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="styles/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+<style type="text/css">
+/* tooltip */
+.tooltip.top {
+    padding: 5px 0;
+    margin-top: -3px;
+}
+
+.tooltip.right {
+    padding: 0 5px;
+    margin-left: 0px;
+}
+
+.tooltip.bottom {
+    padding: 5px 0;
+    margin-top: 0px;
+}
+
+.tooltip.left {
+    padding: 0 5px;
+    margin-left: -10px;
+}
+
+/* user-icon */
+div.user-icon a {
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>MdN - ツールボックス</h1>
+<h4>カーソルを合わせると表示するツールチップ</h4>
+</header>
+
+
+<div class="container">
+<!-- Start Content -->
+
+<h6>デフォルトだとtitle=""なので何も表示されません</h6>
+<a href="#" rel="tooltip">上</a>
+<a href="#" rel="tooltip">右</a>
+<a href="#" rel="tooltip">左</a>
+<a href="#" rel="tooltip">下</a>
+
+<h6>オプションtitle，placementを使うとこんな感じ(デフォルトでanimationはtrue(有効)のためフワッとゆっくり表示：fadeをサポートしているブラウザでのみ確認可能)</h6>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="TOP" data-placement="top">上</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="RIGHT" data-placement="right">右</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="LEFT" data-placement="left">左</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="BOTTOM" data-placement="bottom">下</a>
+
+<h6>オプションanimationをfalse(無効)にするとこんな感じ（サッと即時に表示）</h6>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="TOP" data-placement="top" data-animation=false>上</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="RIGHT" data-placement="right" data-animation=false>右</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="LEFT" data-placement="left" data-animation=false>左</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="BOTTOM" data-placement="bottom" data-animation=false>下</a>
+
+<h6>オプションtriggerをclickに変更するとクリック時にツールチップの表示／非表示が切り替わる動作になります</h6>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="TOP" data-placement="top" data-trigger="click">上</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="RIGHT" data-placement="right" data-trigger="click">右</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="LEFT" data-placement="left" data-trigger="click">左</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="BOTTOM" data-placement="bottom" data-trigger="click">下</a>
+
+<h6>画像にツールチップを適用するとこんな感じ</h6>
+<div class="user-icon">
+<a href="#" rel="tooltip" data-title="非常口" data-placement="top"><img src="images/Emergency_Exit.png"></a>
+</div>
+
+<h6>オプションdelayを使用するとツールチップの表示と非表示を遅らせる（ミリ秒）ことが可能です</h6>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="TOP" data-placement="top" data-delay="1000">上</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="RIGHT" data-placement="right" data-delay="1000">右</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="LEFT" data-placement="left" data-delay="1000">左</a>
+<a href="#" rel="tooltip" class="btn tooltip-test" data-title="BOTTOM" data-placement="bottom" data-delay="1000">下</a>
+
+<h6>オプションの記述をタグの外だしにするとこんな感じ（見た目には変わりませんが）</h6>
+<a href="#" rel="tooltip_top" class="btn tooltip-test">上(0秒で表示)</a>
+<a href="#" rel="tooltip_right" class="btn tooltip-test">右(0秒で表示)</a>
+<a href="#" rel="tooltip_left" class="btn tooltip-test">左(3秒で表示)</a>
+<a href="#" rel="tooltip_bottom" class="btn tooltip-test">下(3秒で表示)</a>
+
+<h6>以下ボタンにて上記ツールチップの表示／非表示を制御できます</h6>
+<button id="btnToggle" type="button">Toggle</button>
+<button id="btnShow" type="button">Show</button>
+<button id="btnHide" type="button">Hide</button>
+
+<!-- // End Content -->
+</div>
+
+<!-- Include jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>')</script>
+<script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function() {
+//tooltip
+    $('[rel=tooltip]').tooltip();
+
+    $('[rel=tooltip_top]').tooltip({
+        'title': 'TOP(0秒で消えます)',
+        'placement': 'top',
+        delay: { show: 0, hide: 0 }
+    });
+
+    $('[rel=tooltip_right]').tooltip({
+        'title': 'RIGHT(3秒で消えます)',
+        'placement': 'right',
+        delay: { show: 0, hide: 3000 }
+    });
+
+    $('[rel=tooltip_left]').tooltip({
+        'title': 'LEFT(0秒で消えます)',
+        'placement': 'left',
+        delay: { show: 3000, hide:0 }
+    });
+
+    $('[rel=tooltip_bottom]').tooltip({
+        'title': 'BOTTOM(3秒で消えます)',
+        'placement': 'bottom',
+        delay: { show: 3000, hide: 3000 }
+    });
+
+    $("#btnToggle").click(function() {
+        $('[rel=tooltip]').tooltip('toggle');
+        $('[rel=tooltip_top]').tooltip('toggle');
+        $('[rel=tooltip_right]').tooltip('toggle');
+        $('[rel=tooltip_left]').tooltip('toggle');
+        $('[rel=tooltip_bottom]').tooltip('toggle');
+    });
+
+    $("#btnShow").click(function() {
+        $('[rel=tooltip]').tooltip('show');
+        $('[rel=tooltip_top]').tooltip('show');
+        $('[rel=tooltip_right]').tooltip('show');
+        $('[rel=tooltip_left]').tooltip('show');
+        $('[rel=tooltip_bottom]').tooltip('show');
+    });
+
+    $("#btnHide").click(function() {
+        $('[rel=tooltip]').tooltip('hide');
+        $('[rel=tooltip_top]').tooltip('hide');
+        $('[rel=tooltip_right]').tooltip('hide');
+        $('[rel=tooltip_left]').tooltip('hide');
+        $('[rel=tooltip_bottom]').tooltip('hide');
+    });
+});
+</script>
+</body>
+</html>
