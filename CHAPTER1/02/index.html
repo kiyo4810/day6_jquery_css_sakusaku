@@ -1,14 +1,14 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="UTF-8">
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
     <title>02-3Dエフェクトで表示するインパクトのあるサイドバー</title>
-</head>
-<body>
-<div class="meny">
-    <h4>Contents</h4>
-    <ul>
+  </head>
+  <body>
+    <div class="meny">
+      <h4>Contents</h4>
+      <ul>
         <li><a href="#">最新のWeb技術を最適の戦略で</a></li>
         <li><a href="#">一気に変貌したWeb戦略</a></li>
         <li><a href="#">Social Media</a></li>
@@ -16,40 +16,52 @@
         <li><a href="#">CMS</a></li>
         <li><a href="http://ardito.jp">Ardito</a></li>
         <li><a href="http://www.facebook.com/woorks">WOORKS</a></li>
-    </ul>
-</div>
-<!-- /#meny -->
+      </ul>
+    </div>
+    <!-- /#meny -->
 
-<div class="meny-arrow"></div>
+    <div class="meny-arrow"></div>
 
-<div class="contents">
-    <header>
+    <div class="contents">
+      <header>
         <h1>MdN - ツールボックス</h1>
         <h2>3Dエフェクトで表示するインパクトのあるサイドバー</h2>
-    </header>
-    <section>
-    	<h3>最新のWeb技術を最適の戦略で</h3>
-        <p><img src="images/img.png" alt="" width="300" height="177" class="imgLeft" />2010年〜2011年、Web戦略分野では、これまでにない大きな変革を迎えました。この変革は、これからの少なくとも5〜10年間の基軸ともなり得る重要な変革であり、それはそのまま顧客マインドの変化とも密にシンクロして起こった事象と言えます。<br />
-その中でも、クラウド・コンピューティング、ソーシャル・ネットワーク、電子書籍、スマートフォン・デジタルデバイスの4つについては、既に一般に広く流布し、今後さらに浸透していく分野と考えられます。<br />
-これから新しいWeb戦略を考えるみなさまにとっては、これらの分野をいち早く、そしていかにうまく取り入れるかが成功の鍵となると考えております。<br />
-これらにいち早く取り組むことで、そのサイト自身のニュース・バリューも上げることができ、さらに大きな波及効果をもたらすことにも効果を生み出すことでしょう。</p>
-    </section>
-</div>
-<!-- /#contents -->
+      </header>
+      <section>
+        <h3>最新のWeb技術を最適の戦略で</h3>
+        <p>
+          <img
+            src="images/img.png"
+            alt=""
+            width="300"
+            height="177"
+            class="imgLeft"
+          />2010年〜2011年、Web戦略分野では、これまでにない大きな変革を迎えました。この変革は、これからの少なくとも5〜10年間の基軸ともなり得る重要な変革であり、それはそのまま顧客マインドの変化とも密にシンクロして起こった事象と言えます。<br />
+          その中でも、クラウド・コンピューティング、ソーシャル・ネットワーク、電子書籍、スマートフォン・デジタルデバイスの4つについては、既に一般に広く流布し、今後さらに浸透していく分野と考えられます。<br />
+          これから新しいWeb戦略を考えるみなさまにとっては、これらの分野をいち早く、そしていかにうまく取り入れるかが成功の鍵となると考えております。<br />
+          これらにいち早く取り組むことで、そのサイト自身のニュース・バリューも上げることができ、さらに大きな波及効果をもたらすことにも効果を生み出すことでしょう。
+        </p>
+      </section>
+    </div>
+    <!-- /#contents -->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../common/javascripts/jquery.min.js"><\/script>')</script>
-<script src="javascripts/meny.min.js"></script>
-<script type="text/javascript">
-    $(function() {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../../common/javascripts/jquery.min.js"><\/script>'
+        );
+    </script>
+    <script src="javascripts/meny.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
         var meny = Meny.create({
-            menuElement:  $('.meny')[0],
-            contentsElement:  $('.contents')[0]
-//            menuElement: document.querySelector( '.meny' ),
-//            contentsElement: document.querySelector( '.contents' )
+          menuElement: $(".meny")[0],
+          contentsElement: $(".contents")[0],
+          //            menuElement: document.querySelector( '.meny' ),
+          //            contentsElement: document.querySelector( '.contents' )
         });
-    });
-
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
