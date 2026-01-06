@@ -266,15 +266,10 @@ a.wbp-small.brown.hover {
 }
 
 /* 2026年1月6日　以下、スマホ対応にするため加筆　ここから */
-/* --- 追加・修正するCSS --- */
+/* --- 修正版：スマホ専用のレスポンシブ設定 --- */
 
-/* 1. すべての画像をスマホでもはみ出さないように設定 */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* 2. 共通：位置固定の基本設定（skrollr用） */
+/* 1. 共通設定（skrollr用） */
+/* パソコン・スマホ両方でパララックスを動かすために必要 */
 #turnboard,
 #revarsal,
 #expander,
@@ -282,31 +277,54 @@ img {
 #slidetoright,
 #turncolorsize,
 #finish {
-  position: fixed; /* これが抜けるとパララックスが崩れます */
+  position: fixed;
 }
 
-/* 3. スマホ向け（画面幅768px以下）の調整 */
+/* 2. スマホ向け（画面幅 768px 以下）の設定 */
 @media screen and (max-width: 768px) {
-  /* ボードの幅を広げてパンくんが小さくなりすぎるのを防ぐ */
+  /* スマホの時は画像を画面幅いっぱいに許可し、中央寄せにする */
+  img {
+    max-width: 80% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* 回転ボード：中身を中央寄せにし、幅を整える */
   #turnboard {
     width: 90% !important;
-    margin-left: -45% !important;
+    left: 5% !important;     /* 画面の左端から5%の位置に配置 */
+    margin-left: 0 !important; /* 計算を単純化するためマージンをリセット */
+    text-align: center !important;
     padding: 1em !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* 子要素（画像）を中央に */
   }
 
-  /* 反転要素の幅も広げる */
+  /* 反転要素：画像と文字を中央に */
   #revarsal {
     width: 90% !important;
-    margin-left: -45% !important;
-    font-size: 100% !important; /* スマホでは文字を少し小さく */
+    left: 5% !important;     /* 画面中央にくるように調整 */
+    margin-left: 0 !important;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* 子要素（画像）を中央に */
   }
 
-  /* 展開パネル内のパンくんサイズ調整 */
+  /* 画像そのものがズレないように設定 */
+  #turnboard img, 
+  #revarsal img {
+    margin: 0 auto !important;
+    display: block !important;
+
+  /* 下から出てくるパンくんの最大サイズをスマホ用に制限 */
   #expander img {
-    max-width: 80% !important; /* スマホ画面の8割まで拡大 */
+    max-width: 80% !important;
   }
 
-  /* 暗転後の文字位置を中央に寄せる */
+  /* 文字サイズと位置の微調整 */
   #turncolorsize {
     left: 5% !important;
     width: 90% !important;
@@ -314,18 +332,17 @@ img {
     text-align: center;
   }
 
-  /* ヘッダーの高さを自動にして文字がはみ出さないようにする */
+  /* ヘッダーの調整 */
   header {
     height: auto !important;
-    min-height: 50px;
   }
+}
 
-  header h1 {
-    font-size: 18px;
-  }
-  header h2 {
-    font-size: 12px;
-    margin: 5px 0;
+/* 3. パソコン向け（画面幅 769px 以上）の微調整 */
+@media screen and (min-width: 769px) {
+  /* パソコンでパンくんがデカすぎるのを防ぐためのブレーキ */
+  #expander img {
+    max-width: 300px !important;
   }
 }
 /* 2026年1月6日　以下、スマホ対応にするため加筆　ここまで */
