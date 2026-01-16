@@ -120,11 +120,15 @@
       window.jQuery || document.write('<script src="/common/javascripts/jquery.min.js"><\/script>');
     </script>
     <script type="text/javascript" src="javascripts/photobox.js"></script>
+
     <script>
       $("#gallery").photobox("a", { zoomable: true }, imageLoaded);
       function imageLoaded() {
         console.log("image has been loaded...");
       }
     </script>
-  </body>
+     <!-- そのドキュメント内の画像を配列で格納されているimagesプロパティの24＋１番目 -->
+      <div>↓このdocumentオブジェクト内のimageオブジェクトに表示順で配列で格納されている24＋１番目の画像</div>
+<script>document.write(document.images[24].outerHTML);  </script>
+</body>
 </html>
